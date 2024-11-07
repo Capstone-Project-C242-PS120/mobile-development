@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">Capstone</string>
+    <string name="welcome_title">Welcome to NutriTrack!</string>
+    <string name="image_welcome">image_welcome</string>
+    <string name="welcome_description">Eating healthy just got easier. Track your meals, monitor your nutrition, and achieve your health goals—all in one place.</string>
+    <string name="get_started">Get Started</string>
+    <string name="lets_connect_nwith_us">Lets Connect \nWith Us</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="login">Login</string>
+    <string name="or">or</string>
+    <string name="sign_in_with_google">Sign In With Google</string>
+    <string name="don_t_have_an_account_sign_up">Don’t have an account? Sign Up</string>
+    <string name="set_up_your_naccount">Set Up Your \nAccount</string>
+    <string name="email">Email</string>
+    <string name="create_account">Create Account</string>
+    <string name="already_have_account_sign_in">Already have account? Sign In</string>
+    <string name="sign_up_with_google">Sign Up With Google</string>
 </resources>
