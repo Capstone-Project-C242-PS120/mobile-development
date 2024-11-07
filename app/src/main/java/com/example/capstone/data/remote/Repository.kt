@@ -16,7 +16,7 @@ class Repository private constructor(
         return withContext(Dispatchers.IO) {
             try {
                 val response = apiService.login(email, password)
-                return@withContext if (response.status == 200) {
+                return@withContext if (response.statusCode == 200) {
                     Result.Success(response)
                 } else {
                     Result.Error(response.message)
@@ -38,7 +38,7 @@ class Repository private constructor(
         return withContext(Dispatchers.IO) {
             try {
                 val response = apiService.register(name, email, password)
-                if (response.status == 200) {
+                if (response.statusCode == 200) {
                     Result.Success(response)
                 } else {
                     Result.Error(response.message)
