@@ -3,4 +3,11 @@
     <color name="black">#181A22</color>
     <color name="white">#FFFFFFFF</color>
     <color name="green">#0A3E39</color>
+
+    <color name="red_calories">#A7352A</color>
+    <color name="orange_protein">#BC7D1D</color>
+    <color name="blue_sugar">#183681</color>
+    <color name="caloris_bg">#FFBBB4</color>
+    <color name="protein_bg">#F2E3CD</color>
+    <color name="sugar_bg">#B6C3E4</color>
 </resources>

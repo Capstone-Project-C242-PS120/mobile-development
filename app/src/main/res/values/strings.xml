@@ -17,4 +17,6 @@
     <string name="create_account">Create Account</string>
     <string name="already_have_account_sign_in">Already have account? Sign In</string>
     <string name="sign_up_with_google">Sign Up With Google</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
