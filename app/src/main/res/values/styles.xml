@@ -1,0 +1,12 @@
+<resources>
+    <style name="roundedImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="item_nutrition_Dashboard_style">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">18dp</item>
+        <item name="backgroundColor">@color/blue_sugar</item>
+    </style>
+</resources>

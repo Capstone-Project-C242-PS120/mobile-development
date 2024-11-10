@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.dashboard.FragmentDashboard">
+
+    <!-- Main container layout -->
+    <LinearLayout
+        android:id="@+id/profile_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <!-- Profile Image -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/dashboard_pp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/profile_pitcure"
+            app:shapeAppearance="@style/roundedImageView"
+            android:layout_gravity="center_vertical"
+            android:scaleType="centerCrop"/>
+
+        <!-- Welcome Text -->
+        <LinearLayout
+            android:paddingLeft="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello, "
+                android:textSize="18sp"
+                android:textStyle="normal"
+                android:fontFamily="@font/poppins_regular"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hifric Aldar"
+                android:textSize="22sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Recommendation Section Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recommendation"
+        android:layout_below="@id/profile_section"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:textSize="15sp"
+        android:textStyle="bold"/>
+
+    <!-- Recommendation Frame Layout -->
+    <FrameLayout
+        android:id="@+id/fr_recomendation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profile_section"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp"/>
+
+    <!-- Daily Nutrition Title -->
+    <TextView
+        android:id="@+id/tv_dailynutrition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Daily Nutrition"
+        android:layout_below="@id/fr_recomendation"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="8dp"
+        android:textSize="15sp"
+        android:textStyle="bold"/>
+
+    <!-- Daily Nutrition Items (Calories, Protein, Sugar) -->
+    <LinearLayout
+        android:id="@+id/item_nutrition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_dailynutrition"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="8dp"
+        android:gravity="center_horizontal">
+
+
+        <!-- Calories Item -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingVertical="16dp"
+            android:paddingHorizontal="32dp"
+            android:background="@drawable/rounded_cardcalories"
+            android:layout_marginHorizontal="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Calories"
+                android:textSize="14sp"
+                android:textColor="@color/red_calories"/>
+
+            <ImageView
+                android:src="@drawable/solar__fire_bold"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginVertical="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100g"
+                android:textSize="14sp"
+                android:textColor="@color/red_calories"/>
+
+        </LinearLayout>
+
+        <!-- Protein Item -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingVertical="16dp"
+            android:paddingHorizontal="32dp"
+            android:layout_marginHorizontal="8dp"
+            android:background="@drawable/rounded_cardprotein">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Protein"
+                android:textSize="14sp"
+                android:textColor="@color/orange_protein"/>
+
+            <ImageView
+                android:src="@drawable/mingcute__chicken_fill"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginVertical="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100g"
+                android:textSize="14sp"
+                android:textColor="@color/orange_protein"/>
+
+        </LinearLayout>
+
+        <!-- Sugar Item -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingVertical="16dp"
+            android:paddingHorizontal="32dp"
+            android:layout_marginHorizontal="8dp"
+            android:background="@drawable/rounded_cardsugar"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sugar"
+                android:textSize="14sp"
+                android:textColor="@color/blue_sugar"/>
+
+            <ImageView
+                android:src="@drawable/ep__sugar"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginVertical="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100g"
+                android:textSize="14sp"
+                android:textColor="@color/blue_sugar"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_recent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recent"
+        android:layout_below="@id/item_nutrition"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Recommendation Frame Layout -->
+    <FrameLayout
+        android:id="@+id/fr_recent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_recent"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp"/>
+
+</RelativeLayout>
