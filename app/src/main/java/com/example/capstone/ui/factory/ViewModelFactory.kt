@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.capstone.data.remote.Repository
 import com.example.capstone.di.Injection
 import com.example.capstone.ui.login.LoginViewModel
+import com.example.capstone.ui.profile.ProfileViewModel
 import com.example.capstone.ui.register.RegisterViewModel
 
 class ViewModelFactory(private val repository: Repository): ViewModelProvider.NewInstanceFactory() {
@@ -16,6 +17,9 @@ class ViewModelFactory(private val repository: Repository): ViewModelProvider.Ne
         }
         if (modelClass.isAssignableFrom(RegisterViewModel::class.java)) {
             return RegisterViewModel(repository) as T
+        }
+        if (modelClass.isAssignableFrom(ProfileViewModel::class.java)) {
+            return ProfileViewModel(repository) as T
         }
         throw IllegalArgumentException("Unknown ViewModel Class: " + modelClass.name)
     }

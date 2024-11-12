@@ -1,6 +1,7 @@
 package com.example.capstone.data.remote
 
 import com.example.capstone.data.Result
+import com.example.capstone.data.remote.response.GetProfileResponse
 import com.example.capstone.data.remote.response.LoginResponse
 import com.example.capstone.data.remote.response.RegisterResponse
 import com.example.capstone.data.remote.retrofit.ApiService
@@ -49,6 +50,21 @@ class Repository private constructor(
         }
     }
 
+    suspend fun getProfile(token: String): Result<GetProfileResponse> {
+        return withContext(Dispatchers.IO) {
+            try {
+                val authToken = "Bearer $token"
+                val response = apiService.getProfile(authToken)
+                if (response.statusCode == 200) {
+                    Result.Success(response)
+                } else {
+                    Result.Error(response.message)
+                }
+            } catch (e: Exception) {
+                Result.Error("${e.message}")
+            }
+        }
+    }
 
     companion object {
         @Volatile
