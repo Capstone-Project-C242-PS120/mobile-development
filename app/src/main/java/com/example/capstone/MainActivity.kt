@@ -10,7 +10,10 @@ import androidx.fragment.app.Fragment
 import com.example.capstone.databinding.ActivityMainBinding
 import com.example.capstone.pref.SessionManager
 import com.example.capstone.ui.dashboard.FragmentDashboard
+import com.example.capstone.ui.explore.ExploreFragment
+import com.example.capstone.ui.history.HistoryFragment
 import com.example.capstone.ui.profile.ProfileFragment
+import com.example.capstone.ui.scan.ScanFragment
 import com.example.capstone.ui.welcome.WelcomeActivity
 
 class MainActivity : AppCompatActivity() {
@@ -35,6 +38,18 @@ class MainActivity : AppCompatActivity() {
             when(item.itemId) {
                 R.id.nav_dashboard -> {
                     openFragment(FragmentDashboard())
+                    true
+                }
+                R.id.nav_explore -> {
+                    openFragment(ExploreFragment())
+                    true
+                }
+                R.id.nav_scan -> {
+                    openFragment(ScanFragment())
+                    true
+                }
+                R.id.nav_history -> {
+                    openFragment(HistoryFragment())
                     true
                 }
                 R.id.nav_profile -> {
