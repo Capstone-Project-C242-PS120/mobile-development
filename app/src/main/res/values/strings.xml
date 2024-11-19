@@ -19,4 +19,59 @@
     <string name="sign_up_with_google">Sign Up With Google</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string-array name="data_name">
+        <item>Apple</item>
+        <item>Banana</item>
+        <item>Carrot</item>
+        <item>Broccoli</item>
+        <item>Spinach</item>
+        <item>Chicken Breast</item>
+        <item>Salmon</item>
+        <item>Almonds</item>
+        <item>Oats</item>
+        <item>Yogurt</item>
+    </string-array>
+
+    <string-array name="data_food_photo">
+        <item>https://www.example.com/images/apple.jpg</item>
+        <item>https://www.example.com/images/banana.jpg</item>
+        <item>https://www.example.com/images/carrot.jpg</item>
+        <item>https://www.example.com/images/broccoli.jpg</item>
+        <item>https://www.example.com/images/spinach.jpg</item>
+        <item>https://www.example.com/images/chicken_breast.jpg</item>
+        <item>https://www.example.com/images/salmon.jpg</item>
+        <item>https://www.example.com/images/almonds.jpg</item>
+        <item>https://www.example.com/images/oats.jpg</item>
+        <item>https://www.example.com/images/yogurt.jpg</item>
+    </string-array>
+
+    <string-array name="data_food_rank">
+        <item>A</item>
+        <item>A</item>
+        <item>B</item>
+        <item>A</item>
+        <item>A</item>
+        <item>B</item>
+        <item>A</item>
+        <item>B</item>
+        <item>A</item>
+        <item>A</item>
+    </string-array>
+
+    <string-array name="data_food_category">
+        <item>Fruit</item>
+        <item>Fruit</item>
+        <item>Vegetable</item>
+        <item>Vegetable</item>
+        <item>Vegetable</item>
+        <item>Protein</item>
+        <item>Protein</item>
+        <item>Nut</item>
+        <item>Grain</item>
+        <item>Dairy</item>
+    </string-array>
+
+
 </resources>

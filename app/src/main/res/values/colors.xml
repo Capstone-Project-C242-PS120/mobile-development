@@ -10,4 +10,9 @@
     <color name="caloris_bg">#FFBBB4</color>
     <color name="protein_bg">#F2E3CD</color>
     <color name="sugar_bg">#B6C3E4</color>
+    <color name="rank_a">#00803D</color>
+    <color name="rank_b">#88BD25</color>
+    <color name="rank_c">#FFCC02</color>
+    <color name="rankd_d">#EF7D00</color>
+    <color name="rank_e">#E63312</color>
 </resources>

@@ -5,56 +5,54 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.capstone.R
+import com.example.capstone.ui.history.History
+import com.example.capstone.ui.history.HistoryAdapter
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [FragmentDashboard.newInstance] factory method to
- * create an instance of this fragment.
- */
 class FragmentDashboard : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var recyclerView: RecyclerView
+    private val recentHistoryList = ArrayList<History>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
+        savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_dashboard, container, false)
+        val view = inflater.inflate(R.layout.fragment_dashboard, container, false)
+
+        // Initialize RecyclerView
+        recyclerView = view.findViewById(R.id.recyleviewdashboard)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+        // Load recent history data (example data or real data source)
+        loadRecentHistory()
+
+        // Set up the adapter with the data
+        val adapter = HistoryAdapter(recentHistoryList)
+        recyclerView.adapter = adapter
+
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment FragmentDashboard.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            FragmentDashboard().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun loadRecentHistory() {
+        // Example data
+        val recentHistoryNames = resources.getStringArray(R.array.data_name)
+        val recentHistoryCategories = resources.getStringArray(R.array.data_food_category)
+        val recentHistoryRanks = resources.getStringArray(R.array.data_food_rank)
+        val recentHistoryPhotos = resources.getStringArray(R.array.data_food_photo)
+
+        // Populate the list with data
+        for (i in recentHistoryNames.indices) {
+            val history = History(
+                name = recentHistoryNames[i],
+                category = recentHistoryCategories[i],
+                photo = recentHistoryPhotos[i],
+                rank = recentHistoryRanks[i]
+            )
+            recentHistoryList.add(history)
+        }
     }
 }
