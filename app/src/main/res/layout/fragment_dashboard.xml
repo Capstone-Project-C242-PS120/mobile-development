@@ -86,6 +86,7 @@
         android:textStyle="bold"/>
 
     <!-- Daily Nutrition Items (Calories, Protein, Sugar) -->
+    <!-- Daily Nutrition Items (Calories, Protein, Sugar) -->
     <LinearLayout
         android:id="@+id/item_nutrition"
         android:layout_width="match_parent"
@@ -97,15 +98,15 @@
         android:paddingTop="8dp"
         android:gravity="center_horizontal">
 
-
         <!-- Calories Item -->
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center_horizontal"
             android:paddingVertical="16dp"
-            android:paddingHorizontal="32dp"
+            android:paddingHorizontal="8dp"
+            android:layout_weight="1"
             android:background="@drawable/rounded_cardcalories"
             android:layout_marginHorizontal="8dp">
 
@@ -114,91 +115,91 @@
                 android:layout_height="wrap_content"
                 android:text="Calories"
                 android:textSize="14sp"
-                android:textColor="@color/red_calories"/>
+                android:textColor="@color/red_calories" />
 
             <ImageView
                 android:src="@drawable/solar__fire_bold"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:layout_marginVertical="8dp"/>
+                android:layout_marginVertical="8dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="100g"
                 android:textSize="14sp"
-                android:textColor="@color/red_calories"/>
-
+                android:textColor="@color/red_calories" />
         </LinearLayout>
 
         <!-- Protein Item -->
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center_horizontal"
             android:paddingVertical="16dp"
-            android:paddingHorizontal="32dp"
-            android:layout_marginHorizontal="8dp"
-            android:background="@drawable/rounded_cardprotein">
+            android:paddingHorizontal="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_cardprotein"
+            android:layout_marginHorizontal="8dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Protein"
                 android:textSize="14sp"
-                android:textColor="@color/orange_protein"/>
+                android:textColor="@color/orange_protein" />
 
             <ImageView
                 android:src="@drawable/mingcute__chicken_fill"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:layout_marginVertical="8dp"/>
+                android:layout_marginVertical="8dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="100g"
                 android:textSize="14sp"
-                android:textColor="@color/orange_protein"/>
-
+                android:textColor="@color/orange_protein" />
         </LinearLayout>
 
         <!-- Sugar Item -->
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center_horizontal"
             android:paddingVertical="16dp"
-            android:paddingHorizontal="32dp"
-            android:layout_marginHorizontal="8dp"
+            android:paddingHorizontal="8dp"
+            android:layout_weight="1"
             android:background="@drawable/rounded_cardsugar"
-            >
+            android:layout_marginHorizontal="8dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sugar"
                 android:textSize="14sp"
-                android:textColor="@color/blue_sugar"/>
+                android:textColor="@color/blue_sugar" />
 
             <ImageView
                 android:src="@drawable/ep__sugar"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:layout_marginVertical="8dp"/>
+                android:layout_marginVertical="8dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="100g"
                 android:textSize="14sp"
-                android:textColor="@color/blue_sugar"/>
-
+                android:textColor="@color/blue_sugar" />
         </LinearLayout>
 
     </LinearLayout>
+
+
 
     <TextView
         android:id="@+id/tv_recent"
@@ -213,12 +214,11 @@
         android:layout_marginTop="16dp"/>
 
     <!-- Recommendation Frame Layout -->
-    <FrameLayout
-        android:id="@+id/fr_recent"
+    <androidx.recyclerview.widget.RecyclerView
+        android:padding="16dp"
+        android:id="@+id/recyleviewdashboard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_recent"
-        android:paddingTop="16dp"
-        android:paddingBottom="8dp"/>
+        android:layout_below="@id/tv_recent"/>
 
 </RelativeLayout>
