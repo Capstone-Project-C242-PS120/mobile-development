@@ -35,17 +35,18 @@
     </string-array>
 
     <string-array name="data_food_photo">
-        <item>https://www.example.com/images/apple.jpg</item>
-        <item>https://www.example.com/images/banana.jpg</item>
-        <item>https://www.example.com/images/carrot.jpg</item>
-        <item>https://www.example.com/images/broccoli.jpg</item>
-        <item>https://www.example.com/images/spinach.jpg</item>
-        <item>https://www.example.com/images/chicken_breast.jpg</item>
-        <item>https://www.example.com/images/salmon.jpg</item>
-        <item>https://www.example.com/images/almonds.jpg</item>
-        <item>https://www.example.com/images/oats.jpg</item>
-        <item>https://www.example.com/images/yogurt.jpg</item>
+        <item>https://images.unsplash.com/photo-1567306226416-28f0efdc88ce</item> <!-- Apple -->
+        <item>https://images.unsplash.com/photo-1574226516831-e1dff420485d</item> <!-- Banana -->
+        <item>https://images.unsplash.com/photo-1612222866161-7b3c6ee7151b</item> <!-- Carrot -->
+        <item>https://images.unsplash.com/photo-1627308595229-7830a5c91f9f</item> <!-- Broccoli -->
+        <item>https://images.unsplash.com/photo-1592928305900-e91db57698c1</item> <!-- Spinach -->
+        <item>https://images.unsplash.com/photo-1617196033593-ec2b8ebdbde6</item> <!-- Chicken Breast -->
+        <item>https://images.unsplash.com/photo-1582560475321-11d48a0193fd</item> <!-- Salmon -->
+        <item>https://images.unsplash.com/photo-1588167105028-e38b3b271f74</item> <!-- Almonds -->
+        <item>https://images.unsplash.com/photo-1604908811998-6a9f82c937c5</item> <!-- Oats -->
+        <item>https://images.unsplash.com/photo-1576671080666-cfdbab8d9f18</item> <!-- Yogurt -->
     </string-array>
+
 
     <string-array name="data_food_rank">
         <item>A</item>

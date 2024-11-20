@@ -3,15 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="16dp"
-    >
+    android:padding="8dp">
 
     <LinearLayout
-        android:paddingVertical="12dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_history_card"
         android:orientation="horizontal"
+        android:paddingVertical="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,9 +22,9 @@
             android:layout_height="38dp"
             android:layout_gravity="center_vertical"
             android:layout_marginHorizontal="16dp"
-            android:src="@drawable/img_welcome"
+            android:background="@drawable/rounded_image_history"
             android:scaleType="centerCrop"
-            android:background="@drawable/rounded_image_history"/>
+            android:src="@drawable/img_welcome" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -37,20 +36,19 @@
                 android:id="@+id/textViewTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
                 android:text="Hello, World!"
-                android:textColor="#000"
-                android:textSize="13sp"
-                android:fontFamily="@font/poppins_bold"/>
+                android:textColor="@color/black"
+                android:textSize="13sp" />
 
             <TextView
                 android:id="@+id/textViewCategory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
                 android:text="Drink"
                 android:textColor="#979797"
-                android:textSize="11sp"
-                android:fontFamily="@font/poppins_regular"
-                />
+                android:textSize="11sp" />
         </LinearLayout>
 
         <TextView
@@ -59,13 +57,13 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginHorizontal="16dp"
+            android:background="@drawable/rounded_rank_history_a"
+            android:fontFamily="@font/poppins_bold"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="4dp"
             android:text="A"
             android:textColor="@color/white"
-            android:textSize="16sp"
-            android:paddingVertical="4dp"
-            android:paddingHorizontal="12dp"
-            android:fontFamily="@font/poppins_bold"
-            android:background="@drawable/rounded_rank_history_a"/>
+            android:textSize="16sp" />
 
     </LinearLayout>
 
