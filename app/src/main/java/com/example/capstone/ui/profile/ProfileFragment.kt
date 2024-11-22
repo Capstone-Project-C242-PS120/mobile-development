@@ -15,6 +15,7 @@ import com.example.capstone.data.Result
 import com.example.capstone.databinding.FragmentProfileBinding
 import com.example.capstone.pref.SessionManager
 import com.example.capstone.ui.factory.ViewModelFactory
+import com.example.capstone.ui.subscriptionpage.SubscriptionActivity
 import com.example.capstone.ui.welcome.WelcomeActivity
 
 
@@ -45,9 +46,15 @@ class ProfileFragment : Fragment() {
             navigateToWelcome()
         }
 
+        binding.subsplanNav.setOnClickListener {
+            navigateToSubscription()
+        }
+
         binding.btnLogout.setOnClickListener {
             showLogoutConfirmation()
         }
+
+
     }
 
     private fun observeViewModel() {
@@ -75,6 +82,11 @@ class ProfileFragment : Fragment() {
 
     private fun showLoading(isLoading: Boolean) {
         binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+    }
+
+    private fun navigateToSubscription() {
+        val intent = Intent(requireContext(), SubscriptionActivity::class.java)
+        startActivity(intent)
     }
 
     private fun navigateToWelcome() {
