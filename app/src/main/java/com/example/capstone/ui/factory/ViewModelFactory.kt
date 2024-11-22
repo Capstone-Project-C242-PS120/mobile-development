@@ -8,6 +8,7 @@ import com.example.capstone.di.Injection
 import com.example.capstone.ui.login.LoginViewModel
 import com.example.capstone.ui.profile.ProfileViewModel
 import com.example.capstone.ui.register.RegisterViewModel
+import com.example.capstone.ui.scan.ScanViewModel
 
 class ViewModelFactory(private val repository: Repository): ViewModelProvider.NewInstanceFactory() {
     @Suppress("UNCHECKED_CAST")
@@ -20,6 +21,9 @@ class ViewModelFactory(private val repository: Repository): ViewModelProvider.Ne
         }
         if (modelClass.isAssignableFrom(ProfileViewModel::class.java)) {
             return ProfileViewModel(repository) as T
+        }
+        if (modelClass.isAssignableFrom(ScanViewModel::class.java)) {
+            return ScanViewModel(repository) as T
         }
         throw IllegalArgumentException("Unknown ViewModel Class: " + modelClass.name)
     }

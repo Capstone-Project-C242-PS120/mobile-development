@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:scaleType="centerCrop"
+            android:scaleType="fitCenter"
             android:src="@drawable/no_image"
             app:layout_constraintBottom_toTopOf="@+id/btnAnalyze"
             app:layout_constraintEnd_toEndOf="parent"
@@ -43,8 +43,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:backgroundTint="@color/green"
-            android:text="Analyze"
             android:fontFamily="@font/poppins_bold"
+            android:text="Analyze"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/previewImage" />
@@ -59,6 +59,39 @@
             android:drawableLeft="@drawable/outline_camera_alt_24"
             app:layout_constraintEnd_toStartOf="@id/btnAnalyze"
             app:layout_constraintTop_toBottomOf="@id/previewImage" />
+
+        <LinearLayout
+            android:id="@+id/loading_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@color/white"
+            android:padding="8dp"
+            android:layout_margin="6dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tvLoadingText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Loading, please wait..."
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:visibility="visible" />
+        </LinearLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
