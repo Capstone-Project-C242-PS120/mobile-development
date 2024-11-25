@@ -16,7 +16,7 @@ import com.example.capstone.data.Result
 import com.example.capstone.databinding.FragmentScanBinding
 import com.example.capstone.pref.SessionManager
 import com.example.capstone.ui.factory.ViewModelFactory
-import com.example.capstone.ui.fooddetail.FoodDetailActivity
+import com.example.capstone.ui.fooddetail.ScanFoodDetailActivity
 import com.example.capstone.utils.getImageUri
 import com.example.capstone.utils.reduceFileImage
 import com.example.capstone.utils.uriToFile
@@ -71,7 +71,7 @@ class ScanFragment : Fragment() {
                 is Result.Error -> Toast.makeText(requireContext(), result.error, Toast.LENGTH_SHORT).show()
                 is Result.Success -> {
                     val analyzeData = result.data.data
-                    val intent = Intent(requireContext(), FoodDetailActivity::class.java).apply {
+                    val intent = Intent(requireContext(), ScanFoodDetailActivity::class.java).apply {
                         putExtra("ANALYZE_DATA", analyzeData)
                         putExtra("IMAGE_URI", currentImageUri.toString())
                     }

@@ -74,5 +74,15 @@
         <item>Dairy</item>
     </string-array>
 
+    <string-array name="categories">
+        <item>Select Category</item>
+        <item>Fruits</item>
+        <item>Vegetables</item>
+        <item>Dairy</item>
+        <item>Bakery</item>
+    </string-array>
+
+    <string name="spinner_prompt">Select a category</string>
+
 
 </resources>
