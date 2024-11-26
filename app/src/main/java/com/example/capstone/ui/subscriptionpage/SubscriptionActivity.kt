@@ -27,12 +27,8 @@ class SubscriptionActivity : AppCompatActivity() {
         }
 
         binding.imgClose.setOnClickListener {
-            navigateToProfile()
+            finish()
         }
     }
 
-    private fun navigateToProfile() {
-        val intent = Intent(this, ProfileFragment::class.java)
-        startActivity(intent)
-    }
 }

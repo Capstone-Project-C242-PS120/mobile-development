@@ -11,12 +11,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_bold"
-        android:text="History"
+        android:text="@string/riwayat"
         android:textColor="@color/black"
         android:textSize="18sp"
-        android:textStyle="bold"
-
-        />
+        android:textStyle="bold" />
 
 
     <androidx.recyclerview.widget.RecyclerView

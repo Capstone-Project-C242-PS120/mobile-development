@@ -26,7 +26,7 @@ class Repository private constructor(
                 }
             } catch (e: HttpException) {
                 val errorMessage = when (e.code()) {
-                    401 -> "Invalid email or password"
+                    401 -> "Email atau Password Salah:("
                     else -> "Error: ${e.message()}"
                 }
                 Result.Error(errorMessage)

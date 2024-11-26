@@ -20,17 +20,13 @@ class FragmentDashboard : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_dashboard, container, false)
 
-        // Initialize RecyclerView
         recyclerView = view.findViewById(R.id.recyleviewdashboard)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-        // Load recent history data (example data or real data source)
         loadRecentHistory()
 
-        // Set up the adapter with the data
         val adapter = HistoryAdapter(recentHistoryList)
         recyclerView.adapter = adapter
 

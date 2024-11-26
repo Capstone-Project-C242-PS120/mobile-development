@@ -40,6 +40,10 @@ class ScanFoodDetailActivity : AppCompatActivity() {
 
         val analyzeData: AnalyzeData? = intent.getParcelableExtra("ANALYZE_DATA")
 
+        binding.close.setOnClickListener {
+            finish()
+        }
+
         setupView(imageUriString, analyzeData)
 
 

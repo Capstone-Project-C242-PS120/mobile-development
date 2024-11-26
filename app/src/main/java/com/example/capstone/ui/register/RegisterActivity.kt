@@ -48,8 +48,8 @@ class RegisterActivity : AppCompatActivity() {
             val confirmPassword = binding.confirmPasswordEditText.text.toString().trim()
 
             if (password != confirmPassword) {
-                binding.passwordEditText.error = "Password harus sama!"
-                binding.confirmPasswordEditText.error = "Password harus sama!"
+                binding.passwordEditText.error = getString(R.string.password_harus_sama)
+                binding.confirmPasswordEditText.error = getString(R.string.password_harus_sama)
                 return@setOnClickListener
             } else {
                 binding.passwordEditText.error = null
@@ -95,27 +95,27 @@ class RegisterActivity : AppCompatActivity() {
         var isValid = true
 
         if (name.isEmpty()) {
-            binding.usernameEditText.error = "Username tidak boleh kosong"
+            binding.usernameEditText.error = getString(R.string.username_tidak_boleh_kosong)
             isValid = false
         } else {
             binding.usernameEditText.error = null
         }
 
         if (email.isEmpty()) {
-            binding.emailEditText.error = "Email tidak boleh kosong"
+            binding.emailEditText.error = getString(R.string.email_tidak_boleh_kosong)
             isValid = false
         } else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            binding.emailEditText.error = "Format email tidak valid"
+            binding.emailEditText.error = getString(R.string.format_email_tidak_valid)
             isValid = false
         } else {
             binding.emailEditText.error = null
         }
 
         if (password.isEmpty()) {
-            binding.passwordEditText.error = "Password tidak boleh kosong"
+            binding.passwordEditText.error = getString(R.string.password_tidak_boleh_kosong)
             isValid = false
         } else if (password.length < 8) {
-            binding.passwordEditText.error = "Password harus memiliki minimal 6 karakter"
+            binding.passwordEditText.error = getString(R.string.password_harus_memiliki_minimal_6_karakter)
             isValid = false
         } else {
             binding.passwordEditText.error = null

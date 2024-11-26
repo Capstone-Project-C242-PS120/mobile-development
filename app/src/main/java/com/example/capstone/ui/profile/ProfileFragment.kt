@@ -97,14 +97,14 @@ class ProfileFragment : Fragment() {
 
     private fun showLogoutConfirmation() {
         AlertDialog.Builder(requireContext())
-            .setTitle("Confirm Logout")
-            .setMessage("Are You Sure Want to Logout?")
-            .setPositiveButton("Yes") { dialog, _ ->
+            .setTitle(getString(R.string.konfirmasi_keluar))
+            .setMessage(getString(R.string.apakah_kamu_ingin_keluar))
+            .setPositiveButton(getString(R.string.ya)) { dialog, _ ->
                 sessionManager.clearAuthToken()
                 navigateToWelcome()
                 dialog.dismiss()
             }
-            .setNegativeButton("No") { dialog, _ ->
+            .setNegativeButton(getString(R.string.tidak)) { dialog, _ ->
                 dialog.dismiss()
             }
             .show()

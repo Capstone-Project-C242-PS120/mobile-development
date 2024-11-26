@@ -92,20 +92,21 @@ class LoginActivity : AppCompatActivity() {
     private fun isInputValid(email: String, password: String): Boolean {
         var isValid = true
         if (email.isEmpty()) {
-            binding.usernameEditText.error = "Email tidak boleh kosong"
+            binding.usernameEditText.error = getString(R.string.email_tidak_boleh_kosong)
             isValid = false
         } else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            binding.usernameEditText.error = "Format email tidak valid"
+            binding.usernameEditText.error = getString(R.string.format_email_tidak_valid)
             isValid = false
         } else {
             binding.usernameEditText.error = null
         }
 
         if (password.isEmpty()) {
-            binding.passwordEditText.error = "Password tidak boleh kosong"
+            binding.passwordEditText.error = getString(R.string.password_tidak_boleh_kosong)
             isValid = false
         } else if (password.length < 8) {
-            binding.passwordEditText.error = "Password harus memiliki minimal 6 karakter"
+            binding.passwordEditText.error =
+                getString(R.string.password_harus_memiliki_minimal_6_karakter)
             isValid = false
         } else {
             binding.passwordEditText.error = null

@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_bold"
-            android:text="Food Detail"
+            android:text="@string/detail_makanan"
             android:textColor="@color/black"
             android:textSize="22sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -34,7 +34,8 @@
             android:scaleType="centerCrop"
             android:src="@drawable/img_welcome"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            android:contentDescription="@string/detail_makanan" />
 
         <TextView
             android:id="@+id/txt_food_name"
@@ -42,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/poppins_bold"
-            android:text="FoodName"
+            android:text="@string/nama_makanan"
             android:textColor="@color/black"
             android:textSize="22sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -55,7 +56,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/poppins_regular"
-            android:text="Food Rank"
+            android:text="@string/peringkat_makanan"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_food_name" />
 
@@ -67,7 +68,8 @@
             android:gravity="center_horizontal"
             android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_food_rank">
+            app:layout_constraintTop_toBottomOf="@+id/txt_food_rank"
+            app:layout_constraintBottom_toTopOf="@id/txt_keterangan">
 
             <TextView
                 android:id="@+id/rank_a"
@@ -76,7 +78,7 @@
                 android:layout_marginHorizontal="8dp"
                 android:background="@drawable/food_rank_default"
                 android:padding="16dp"
-                android:text="A"
+                android:text="@string/a"
                 android:textColor="@color/black" />
 
             <TextView
@@ -86,7 +88,7 @@
                 android:layout_marginHorizontal="8dp"
                 android:background="@drawable/food_rank_default"
                 android:padding="16dp"
-                android:text="B"
+                android:text="@string/b"
                 android:textColor="@color/black" />
 
             <TextView
@@ -96,7 +98,7 @@
                 android:layout_marginHorizontal="8dp"
                 android:background="@drawable/food_rank_default"
                 android:padding="16dp"
-                android:text="C"
+                android:text="@string/c"
                 android:textColor="@color/black" />
 
             <TextView
@@ -106,7 +108,7 @@
                 android:layout_marginHorizontal="8dp"
                 android:background="@drawable/food_rank_default"
                 android:padding="16dp"
-                android:text="D"
+                android:text="@string/d"
                 android:textColor="@color/black" />
 
             <TextView
@@ -116,10 +118,22 @@
                 android:layout_marginHorizontal="8dp"
                 android:background="@drawable/food_rank_default"
                 android:padding="16dp"
-                android:text="E"
+                android:text="@string/e"
                 android:textColor="@color/black" />
 
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_keterangan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/keterangan_A"
+            android:gravity="center"
+            android:layout_margin="6dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linearLayout"
+            app:layout_constraintBottom_toTopOf="@id/txt_nutrition"/>
 
         <TextView
             android:id="@+id/txt_nutrition"
@@ -127,9 +141,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/poppins_regular"
-            android:text="Nutrition Per-serving"
+            android:text="@string/kandungan_nutrisi"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_keterangan" />
 
         <LinearLayout
             android:id="@+id/linearLayout4"
@@ -157,20 +171,20 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Calories" />
+                    android:text="@string/energi" />
 
                 <TextView
                     android:id="@+id/txt_calories"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="100kcal" />
+                    android:text="@string/_100kcal" />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/linearLayout3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
                 android:padding="16dp">
@@ -183,19 +197,19 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Protein" />
+                    android:text="@string/protein" />
 
                 <TextView
                     android:id="@+id/txt_protein"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="100kcal" />
+                    android:text="@string/_100kcal" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
                 android:padding="16dp">
@@ -208,13 +222,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sugar" />
+                    android:text="@string/gula" />
 
                 <TextView
                     android:id="@+id/txt_sugar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="100kcal" />
+                    android:text="@string/_100kcal" />
             </LinearLayout>
 
 
@@ -246,20 +260,20 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Fat" />
+                    android:text="@string/lemak_jenuh" />
 
                 <TextView
                     android:id="@+id/txt_fat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="100kcal" />
+                    android:text="@string/_100kcal" />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/linearLayout6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
                 android:padding="16dp">
@@ -272,19 +286,19 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="carbo" />
+                    android:text="@string/serat" />
 
                 <TextView
                     android:id="@+id/txt_carbo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="100kcal" />
+                    android:text="@string/_100kcal" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
                 android:padding="16dp">
@@ -297,13 +311,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Vitamin C" />
+                    android:text="@string/natrium" />
 
                 <TextView
                     android:id="@+id/txt_vitaminc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="100kcal" />
+                    android:text="@string/_100kcal" />
             </LinearLayout>
 
 
@@ -313,7 +327,7 @@
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Rating"
+            android:text="@string/apakah_kamu_menyukai_makanan_ini"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout7" />
 
@@ -386,8 +400,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="@color/green"
-            android:text="Save"
+            android:backgroundTint="@color/green"
+            android:text="@string/simpan"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ratingDetails" />
 

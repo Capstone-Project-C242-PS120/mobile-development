@@ -4,27 +4,27 @@
 
     <item
         android:id="@+id/nav_dashboard"
-        android:title="Dashboard"
+        android:title="@string/dashboard"
         android:icon="@drawable/baseline_home_24"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/nav_explore"
-        android:title="Explore"
+        android:title="@string/cari"
         android:icon="@drawable/baseline_search_24"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/nav_scan"
-        android:title="Scan"
+        android:title="@string/pindai"
         android:icon="@drawable/baseline_document_scanner_24"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/nav_history"
-        android:title="History"
+        android:title="@string/riwayat"
         android:icon="@drawable/material_symbols__history"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/nav_profile"
-        android:title="Profile"
+        android:title="@string/profil"
         android:icon="@drawable/iconamoon__profile_fill"
         app:showAsAction="ifRoom"/>
 

@@ -87,7 +87,8 @@ class ScanFragment : Fragment() {
 
     private fun analyzeFood(token: String) {
         if (currentImageUri == null) {
-            Toast.makeText(requireContext(), "Ambil gambar terlebih dahulu", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(),
+                getString(R.string.ambil_gambar_terlebih_dahulu), Toast.LENGTH_SHORT).show()
             return
         }
 
@@ -146,7 +147,8 @@ class ScanFragment : Fragment() {
                 currentImageUri = resultUri
                 showImage()
             } else {
-                Toast.makeText(requireContext(), "Tidak ada foto", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(),
+                    getString(R.string.tidak_ada_foto), Toast.LENGTH_SHORT).show()
             }
         } else {
             if ( result.resultCode == Activity.RESULT_CANCELED) {
@@ -154,7 +156,8 @@ class ScanFragment : Fragment() {
             } else {
                 val cropError = result.data?.let { UCrop.getError(it) }
                 cropError?.let {
-                    Toast.makeText(requireContext(), "Crop Gagal: ${it.message}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(),
+                        getString(R.string.crop_gagal, it.message), Toast.LENGTH_SHORT).show()
                 }
             }
         }

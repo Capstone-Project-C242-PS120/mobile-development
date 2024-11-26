@@ -1,23 +1,22 @@
 <resources>
-    <string name="app_name">Capstone</string>
-    <string name="welcome_title">Welcome to NutriTrack!</string>
+    <string name="app_name">TEJA</string>
+    <string name="welcome_title">Selamat datang di Teman Jajan</string>
     <string name="image_welcome">image_welcome</string>
-    <string name="welcome_description">Eating healthy just got easier. Track your meals, monitor your nutrition, and achieve your health goals—all in one place.</string>
-    <string name="get_started">Get Started</string>
-    <string name="lets_connect_nwith_us">Lets Connect \nWith Us</string>
+    <string name="welcome_description">Makan sehat kini jadi lebih mudah. Lacak makanan Anda, pantau nutrisi Anda, dan capai target kesehatan Anda—semuanya di satu tempat.</string>
+    <string name="get_started">Mulai</string>
+    <string name="lets_connect_nwith_us">Mari Terhubung \nDengan Kami</string>
     <string name="hint_username">Username</string>
     <string name="hint_password">Password</string>
-    <string name="forgot_password">Forgot Password?</string>
+    <string name="forgot_password">Lupa Password?</string>
     <string name="login">Login</string>
-    <string name="or">or</string>
+    <string name="or">atau</string>
     <string name="sign_in_with_google">Sign In With Google</string>
-    <string name="don_t_have_an_account_sign_up">Don’t have an account? Sign Up</string>
+    <string name="don_t_have_an_account_sign_up">Belum punya akun? Sign Up</string>
     <string name="set_up_your_naccount">Set Up Your \nAccount</string>
     <string name="email">Email</string>
-    <string name="create_account">Create Account</string>
-    <string name="already_have_account_sign_in">Already have account? Sign In</string>
+    <string name="create_account">Buat Akun</string>
+    <string name="already_have_account_sign_in">Sudah punya akun? Sign In</string>
     <string name="sign_up_with_google">Sign Up With Google</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
@@ -75,14 +74,68 @@
     </string-array>
 
     <string-array name="categories">
-        <item>Select Category</item>
-        <item>Fruits</item>
-        <item>Vegetables</item>
-        <item>Dairy</item>
-        <item>Bakery</item>
+        <item>Pilih Kategori</item>
+        <item>Buah</item>
+        <item>Sayur</item>
+        <item>Minuman</item>
+        <item>Roti</item>
     </string-array>
 
-    <string name="spinner_prompt">Select a category</string>
+    <string name="spinner_prompt">Pilih Kategori Makanan</string>
+    <string name="format_email_tidak_valid">Format email tidak valid</string>
+    <string name="email_tidak_boleh_kosong">Email tidak boleh kosong</string>
+    <string name="password_tidak_boleh_kosong">Password tidak boleh kosong</string>
+    <string name="password_harus_memiliki_minimal_6_karakter">Password harus memiliki minimal 6 karakter</string>
+    <string name="konfirmasi_keluar">Konfirmasi Keluar</string>
+    <string name="apakah_kamu_ingin_keluar">Apakah kamu ingin keluar?</string>
+    <string name="ya">Ya</string>
+    <string name="tidak">Tidak</string>
+    <string name="password_harus_sama">Password harus sama!</string>
+    <string name="username_tidak_boleh_kosong">Username tidak boleh kosong</string>
+    <string name="ambil_gambar_terlebih_dahulu">Ambil gambar terlebih dahulu</string>
+    <string name="tidak_ada_foto">Tidak ada foto</string>
+    <string name="crop_gagal">Crop Gagal: %1$s</string>
+    <string name="detail_makanan">Detail Makanan</string>
+    <string name="nama_makanan">Nama Makanan</string>
+    <string name="peringkat_makanan">Peringkat makanan</string>
+    <string name="a">A</string>
+    <string name="b">B</string>
+    <string name="c">C</string>
+    <string name="d">D</string>
+    <string name="e">E</string>
+    <string name="kandungan_nutrisi">Kandungan Nutrisi</string>
+    <string name="kalori">Kalori</string>
+    <string name="_100kcal">100kcal</string>
+    <string name="protein">Protein</string>
+    <string name="gula">Gula</string>
+    <string name="energi">Energi</string>
+    <string name="lemak_jenuh">Lemak Jenuh</string>
+    <string name="serat">Serat</string>
+    <string name="apakah_kamu_menyukai_makanan_ini">Apakah kamu menyukai makanan ini?</string>
+    <string name="simpan">Simpan</string>
+    <string name="keterangan_A">Wah makanan ini punya nilai A yang berarti sehat untuk dikonsumsi</string>
+    <string name="detail_hasil_analisis">Detail Hasil Analisis</string>
+    <string name="apa_nama_makanan_ini">Apa nama makanan ini?</string>
+    <string name="contoh_nama_makanan">contoh: Susu Milku</string>
+    <string name="natrium">Natrium</string>
+    <string name="mari_bergabung_bersama_kami">Mari Bergabung bersama kami</string>
+    <string name="kembali">kembali</string>
+    <string name="rekomendasi">Rekomendasi</string>
+    <string name="nutrisi_harian">Nutrisi Harian</string>
+    <string name="terbaru">Terbaru</string>
+    <string name="riwayat">Riwayat</string>
+    <string name="perbarui_profile">Perbarui Profile</string>
+    <string name="preferensi">Preferensi</string>
+    <string name="paket_berlangganan">Paket Berlangganan</string>
+    <string name="langgananku">Langgananku</string>
+    <string name="keluar">Keluar</string>
+    <string name="pindai_nutrisi">Pindai Nutrisi</string>
+    <string name="analisa">Analisa</string>
+    <string name="menganalisis_nutrisi">Menganalisis Nutrisi..</string>
+    <string name="cari">Cari</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="pindai">Pindai</string>
+    <string name="profil">Profil</string>
 
 
 </resources>
