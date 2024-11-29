@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TEJA</string>
+    <string name="app_name">TEJA - Teman Jajan</string>
     <string name="welcome_title">Selamat datang di Teman Jajan</string>
     <string name="image_welcome">image_welcome</string>
     <string name="welcome_description">Makan sehat kini jadi lebih mudah. Lacak makanan Anda, pantau nutrisi Anda, dan capai target kesehatan Anda—semuanya di satu tempat.</string>
@@ -137,6 +137,10 @@
     <string name="pindai">Pindai</string>
     <string name="profil">Profil</string>
     <string name="cari_makanan">Cari makanan</string>
+    <string name="dark_mode">Nyalakan Mode Gelap</string>
+    <string name="your_point">Point Anda</string>
+    <string name="tukar_point">Tukar Point Anda</string>
+    <string name="text_tukar_point">Silahkan Pilih Hadiahmu untuk ditukar</string>
 
 
 </resources>
