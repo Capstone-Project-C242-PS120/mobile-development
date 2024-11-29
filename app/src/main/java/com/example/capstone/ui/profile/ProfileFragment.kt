@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.example.capstone.R
@@ -16,6 +17,7 @@ import com.example.capstone.databinding.FragmentProfileBinding
 import com.example.capstone.pref.SessionManager
 import com.example.capstone.ui.factory.ViewModelFactory
 import com.example.capstone.ui.subscriptionpage.SubscriptionActivity
+import com.example.capstone.ui.tukarpoint.TukarPointActivity
 import com.example.capstone.ui.welcome.WelcomeActivity
 
 
@@ -23,6 +25,7 @@ class ProfileFragment : Fragment() {
 
     private lateinit var binding: FragmentProfileBinding
     private lateinit var sessionManager: SessionManager
+
     private val profileViewModel: ProfileViewModel by viewModels {
         ViewModelFactory.getInstance(requireContext())
     }
@@ -32,6 +35,19 @@ class ProfileFragment : Fragment() {
     ): View {
         binding = FragmentProfileBinding.inflate(inflater, container, false)
         sessionManager = SessionManager(requireContext())
+
+        binding.switchDarkMode.isChecked = sessionManager.isDarkModeEnabled()
+
+        binding.switchDarkMode.setOnCheckedChangeListener{_, isChecked ->
+            if (isChecked) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                sessionManager.setDarkModeEnabled(true)
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                sessionManager.setDarkModeEnabled(false)
+            }
+        }
+
         return binding.root
     }
 
@@ -48,6 +64,10 @@ class ProfileFragment : Fragment() {
 
         binding.subsplanNav.setOnClickListener {
             navigateToSubscription()
+        }
+
+        binding.redeemPointNav.setOnClickListener {
+            navigateToReedem()
         }
 
         binding.btnLogout.setOnClickListener {
@@ -86,6 +106,11 @@ class ProfileFragment : Fragment() {
 
     private fun navigateToSubscription() {
         val intent = Intent(requireContext(), SubscriptionActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun navigateToReedem(){
+        val intent = Intent(requireContext(),TukarPointActivity::class.java)
         startActivity(intent)
     }
 
