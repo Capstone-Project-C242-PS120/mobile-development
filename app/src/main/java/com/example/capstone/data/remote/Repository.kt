@@ -2,6 +2,7 @@ package com.example.capstone.data.remote
 
 import com.example.capstone.data.Result
 import com.example.capstone.data.remote.response.FoodAnalyzeResponse
+import com.example.capstone.data.remote.response.FoodAnalyzeSaveResponse
 import com.example.capstone.data.remote.response.FoodDetailResponse
 import com.example.capstone.data.remote.response.GetProfileResponse
 import com.example.capstone.data.remote.response.LoginResponse
@@ -84,6 +85,59 @@ class Repository private constructor(
             }
         }
     }
+
+    suspend fun saveAnalyzeFood(
+        token: String,
+        image: MultipartBody.Part,
+        name: String,
+        nutriscore: Double,
+        grade: Char,
+        tags: String,
+        calories: Double,
+        fat: Double,
+        sugar: Double,
+        fiber: Double,
+        protein: Double,
+        natrium: Double,
+        vegetable: Double,
+        foodRate: Int?
+    ): Result<FoodAnalyzeSaveResponse> {
+        return withContext(Dispatchers.IO) {
+            try {
+                val authToken = "Bearer $token"
+                val response = apiService.saveAnalyzeFood(
+                    authToken,
+                    image,
+                    name,
+                    nutriscore,
+                    grade,
+                    tags,
+                    calories,
+                    fat,
+                    sugar,
+                    fiber,
+                    protein,
+                    natrium,
+                    vegetable,
+                    foodRate
+                )
+                if (response.statusCode == 201) {
+                    Result.Success(response)
+                } else {
+                    Result.Error(response.message)
+                }
+            } catch (e: HttpException) {
+                val errorMessage = when (e.code()) {
+                    401 -> "Unauthorized access"
+                    else -> "Error: ${e.message()}"
+                }
+                Result.Error(errorMessage)
+            } catch (e: Exception) {
+                Result.Error("Error: ${e.message ?: "Unknown error"}")
+            }
+        }
+    }
+
 
 
 

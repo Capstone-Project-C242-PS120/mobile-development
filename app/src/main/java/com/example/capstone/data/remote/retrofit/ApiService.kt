@@ -1,6 +1,7 @@
 package com.example.capstone.data.remote.retrofit
 
 import com.example.capstone.data.remote.response.FoodAnalyzeResponse
+import com.example.capstone.data.remote.response.FoodAnalyzeSaveResponse
 import com.example.capstone.data.remote.response.FoodDetailResponse
 import com.example.capstone.data.remote.response.GetProfileResponse
 import com.example.capstone.data.remote.response.LoginResponse
@@ -13,6 +14,7 @@ import retrofit2.http.Header
 import retrofit2.http.Multipart
 import retrofit2.http.POST
 import retrofit2.http.Part
+import retrofit2.http.PartMap
 
 interface ApiService {
     @FormUrlEncoded
@@ -43,11 +45,23 @@ interface ApiService {
     ): FoodAnalyzeResponse
 
     @Multipart
-    @POST("api/food/detail")
-    suspend fun getfoodDetail(
+    @POST("/api/food/analyze/save")
+    suspend fun saveAnalyzeFood(
         @Header("Authorization") token: String,
-        @Part image: MultipartBody.Part
-    ): FoodDetailResponse
+        @Part image: MultipartBody.Part,
+        @Part("name") name: String,
+        @Part("nutriscore") nutriscore: Double,
+        @Part("grade") grade: Char,
+        @Part("tags") tags: String,
+        @Part("calories") calories: Double,
+        @Part("fat") fat: Double,
+        @Part("sugar") sugar: Double,
+        @Part("fiber") fiber: Double,
+        @Part("protein") protein: Double,
+        @Part("natrium") natrium: Double,
+        @Part("vegetable") vegetable: Double,
+        @Part("food_rate") foodRate: Int?
+    ): FoodAnalyzeSaveResponse
 
 
 
