@@ -77,29 +77,13 @@ class Repository private constructor(
                 if (response.statusCode == 201) {
                     Result.Success(response)
                 } else {
-                    Result.Error(response.message.toString())
+                    Result.Error(response.message)
                 }
             } catch (e: Exception) {
                 Result.Error("${e.message}")
             }
         }
     }
-
-//    suspend fun getFoodDetail(token: String, foodId: Int): Result<FoodDetailResponse> {
-//        return withContext(Dispatchers.IO) {
-//            try {
-//                val authToken = "Bearer $token"
-//                val response = apiService.getfoodDetail(authToken, foodId) // Assuming the API has this endpoint
-//                if (response.statusCode == 200) {
-//                    Result.Success(response)
-//                } else {
-//                    Result.Error(response.message ?: "Failed to fetch food details")
-//                }
-//            } catch (e: Exception) {
-//                Result.Error("Error: ${e.message}")
-//            }
-//        }
-//    }
 
 
 

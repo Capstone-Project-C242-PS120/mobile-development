@@ -2,53 +2,53 @@ package com.example.capstone.data.remote.response
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 data class FoodAnalyzeResponse(
 
 	@field:SerializedName("data")
-	val data: Data? = null,
+	val data: DataAnalyze,
 
 	@field:SerializedName("message")
-	val message: String? = null,
+	val message: String,
 
 	@field:SerializedName("statusCode")
-	val statusCode: Int? = null,
+	val statusCode: Int,
 
 	@field:SerializedName("timestamp")
-	val timestamp: String? = null
+	val timestamp: String
 )
 
 @Parcelize
-data class Data(
+data class DataAnalyze(
 
 	@field:SerializedName("fiber")
-	val fiber: Double? = null,
+	val fiber: Double,
 
 	@field:SerializedName("grade")
-	val grade: String? = null,
+	val grade: Char,
 
 	@field:SerializedName("protein")
-	val protein: Double? = null,
+	val protein: Double,
 
 	@field:SerializedName("fat")
-	val fat: Double? = null,
+	val fat: Double,
 
 	@field:SerializedName("nutriscore")
-	val nutriscore: Double? = null,
+	val nutriscore: Double,
 
 	@field:SerializedName("calories")
-	val calories: Double? = null,
+	val calories: Double,
 
 	@field:SerializedName("natrium")
-	val natrium: Double? = null,
+	val natrium: Double,
 
 	@field:SerializedName("type")
-	val type: String? = null,
+	val type: String,
 
 	@field:SerializedName("vegetable")
-		val vegetable: Double? = null,
+	val vegetable: Double,
 
 	@field:SerializedName("sugar")
-	val sugar: Double? = null
-) : Parcelable
+	val sugar: Double
+): Parcelable

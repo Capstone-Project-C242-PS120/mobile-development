@@ -334,7 +334,7 @@
                     android:text="@string/serat" />
 
                 <TextView
-                    android:id="@+id/txt_carbo"
+                    android:id="@+id/txt_fiber"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/_100kcal" />
@@ -359,7 +359,7 @@
                     android:text="@string/natrium" />
 
                 <TextView
-                    android:id="@+id/txt_vitaminc"
+                    android:id="@+id/txt_natrium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/_100kcal" />

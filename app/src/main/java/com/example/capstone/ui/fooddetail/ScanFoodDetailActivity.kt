@@ -1,12 +1,15 @@
 package com.example.capstone.ui.fooddetail
 
+import android.net.Uri
 import android.os.Bundle
 import android.widget.CheckBox
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.example.capstone.R
+import com.example.capstone.data.remote.response.DataAnalyze
 import com.example.capstone.databinding.ActivityScanFoodDetailBinding
 
 class ScanFoodDetailActivity : AppCompatActivity() {
@@ -23,7 +26,16 @@ class ScanFoodDetailActivity : AppCompatActivity() {
             showMultiSelectDialog()
         }
 
-        setupView()
+        val imageUriString = intent.getStringExtra("IMAGE_URI")
+
+        val analyzeData: DataAnalyze? = intent.getParcelableExtra("ANALYZE_DATA")
+
+        setupView(imageUriString, analyzeData)
+
+        binding.close.setOnClickListener {
+            finish()
+        }
+
     }
 
     private fun showMultiSelectDialog() {
@@ -59,7 +71,45 @@ class ScanFoodDetailActivity : AppCompatActivity() {
             .show()
     }
 
-    private fun setupView() {
+    private fun setupView(imageUriString: String?, analyzeData: DataAnalyze?) {
+        if (imageUriString != null) {
+            val imageUri = Uri.parse(imageUriString)
+            binding.imgPreview.setImageURI(imageUri)
+        }
+
+        analyzeData?.let {
+            binding.apply {
+                txtCalories.text = it.calories.toString()
+                txtProtein.text = it.protein.toString()
+                txtSugar.text = it.sugar.toString()
+                txtFat.text = it.fat.toString()
+                txtFiber.text = it.fiber.toString()
+                txtNatrium.text = it.natrium.toString()
+
+                when(it.grade) {
+                    'A' -> {
+                        rankA.background = ContextCompat.getDrawable(this@ScanFoodDetailActivity, R.drawable.food_rank_a)
+                        rankA.setTextColor(ContextCompat.getColor(this@ScanFoodDetailActivity, android.R.color.white))
+                    }
+                    'B' -> {
+                        rankB.background = ContextCompat.getDrawable(this@ScanFoodDetailActivity, R.drawable.food_rank_b)
+                        rankB.setTextColor(ContextCompat.getColor(this@ScanFoodDetailActivity, android.R.color.white))
+                    }
+                    'C' -> {
+                        rankC.background = ContextCompat.getDrawable(this@ScanFoodDetailActivity, R.drawable.food_rank_c)
+                        rankC.setTextColor(ContextCompat.getColor(this@ScanFoodDetailActivity, android.R.color.white))
+                    }
+                    'D' -> {
+                        rankD.background = ContextCompat.getDrawable(this@ScanFoodDetailActivity, R.drawable.food_rank_d)
+                        rankD.setTextColor(ContextCompat.getColor(this@ScanFoodDetailActivity, android.R.color.white))
+                    }
+                    'E' -> {
+                        rankE.background = ContextCompat.getDrawable(this@ScanFoodDetailActivity, R.drawable.food_rank_e)
+                        rankE.setTextColor(ContextCompat.getColor(this@ScanFoodDetailActivity, android.R.color.black))
+                    }
+                }
+            }
+        }
 
     }
 }
