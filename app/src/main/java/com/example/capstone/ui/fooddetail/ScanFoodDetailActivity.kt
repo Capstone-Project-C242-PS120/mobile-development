@@ -85,9 +85,8 @@ class ScanFoodDetailActivity : AppCompatActivity() {
     }
 
     private fun saveFood(token: String, imageUriString: String?, analyzeData: DataAnalyze?) {
-        // Check if the image URI string is null or empty
         if (imageUriString.isNullOrEmpty()) {
-            Toast.makeText(this, "Image URI is missing", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.gambar_tidak_ada), Toast.LENGTH_SHORT).show()
             return
         }
 
@@ -96,14 +95,12 @@ class ScanFoodDetailActivity : AppCompatActivity() {
         val requestImageFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
         val image = MultipartBody.Part.createFormData("image", file.name, requestImageFile)
 
-        // Retrieve the food name and validate it
         val foodName = binding.edtFoodName.text.toString().trim()
         if (foodName.isEmpty()) {
             Toast.makeText(this, getString(R.string.harap_masukan_nama_makanan), Toast.LENGTH_SHORT).show()
             return
         }
 
-        // Convert parameters to RequestBody
         val nameRequestBody = foodName.toRequestBody("text/plain".toMediaTypeOrNull())
         val tagsRequestBody = selectedCategories.joinToString(", ").toRequestBody("text/plain".toMediaTypeOrNull())
         val gradeRequestBody = (analyzeData?.grade ?: 'C').toString().toRequestBody("text/plain".toMediaTypeOrNull())
@@ -116,9 +113,8 @@ class ScanFoodDetailActivity : AppCompatActivity() {
         val natriumRequestBody = (analyzeData?.natrium ?: 0.0).toString().toRequestBody("text/plain".toMediaTypeOrNull())
         val vegetableRequestBody = (analyzeData?.vegetable ?: 0.0).toString().toRequestBody("text/plain".toMediaTypeOrNull())
         val foodRateRequestBody = binding.foodRate.text.toString().toIntOrNull()?.toString()?.toRequestBody("text/plain".toMediaTypeOrNull())
-            ?: "1".toRequestBody("text/plain".toMediaTypeOrNull()) // Default to "1" if null or invalid
+            ?: "1".toRequestBody("text/plain".toMediaTypeOrNull())
 
-        // Call the ViewModel to save the food
         viewModel.saveAnalyzeFood(
             token,
             image,

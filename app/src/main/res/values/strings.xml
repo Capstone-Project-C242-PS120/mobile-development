@@ -142,6 +142,7 @@
     <string name="tukar_point">Tukar Point Anda</string>
     <string name="text_tukar_point">Silahkan Pilih Hadiahmu untuk ditukar</string>
     <string name="harap_masukan_nama_makanan">Harap masukan nama makanan</string>
+    <string name="gambar_tidak_ada">Gambar tidak ada</string>
 
 
 </resources>
