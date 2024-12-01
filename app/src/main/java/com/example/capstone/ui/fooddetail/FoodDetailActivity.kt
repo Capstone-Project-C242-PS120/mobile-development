@@ -9,7 +9,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.capstone.R
-import com.example.capstone.data.remote.response.AnalyzeData
+import com.example.capstone.data.remote.response.Data
 import com.example.capstone.databinding.ActivityFoodDetailBinding
 
 class FoodDetailActivity : AppCompatActivity() {
@@ -25,15 +25,19 @@ class FoodDetailActivity : AppCompatActivity() {
             insets
         }
 
+        binding.close.setOnClickListener {
+            finish()
+        }
+
         val imageUriString = intent.getStringExtra("IMAGE_URI")
 
-        val analyzeData: AnalyzeData? = intent.getParcelableExtra("ANALYZE_DATA")
+        val analyzeData: Data? = intent.getParcelableExtra("ANALYZE_DATA")
 
         setupView(imageUriString, analyzeData)
 
     }
 
-    private fun setupView(imageUriString: String?, analyzeData: AnalyzeData?) {
+    private fun setupView(imageUriString: String?, analyzeData: Data?) {
         if (imageUriString != null) {
             val imageUri = Uri.parse(imageUriString)
             binding.imgPreview.setImageURI(imageUri)
@@ -45,10 +49,10 @@ class FoodDetailActivity : AppCompatActivity() {
                 txtProtein.text = it.protein.toString()
                 txtSugar.text = it.sugar.toString()
                 txtFat.text = it.fat.toString()
-                txtCarbo.text = it.carbo.toString()
-                txtVitaminc.text = it.vitaminc.toString()
+                txtCarbo.text = it.fat.toString()
+                txtVitaminc.text = it.natrium.toString()
 
-                when(it.rank) {
+                when(it.grade) {
                     "A" -> {
                         rankA.background = ContextCompat.getDrawable(this@FoodDetailActivity, R.drawable.food_rank_a)
                         rankA.setTextColor(ContextCompat.getColor(this@FoodDetailActivity, android.R.color.white))

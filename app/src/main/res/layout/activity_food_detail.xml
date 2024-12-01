@@ -26,6 +26,15 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
+            android:id="@+id/close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_close_24"
+            android:layout_marginTop="4dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ImageView
             android:id="@+id/img_preview"
             android:layout_width="match_parent"
             android:layout_height="215dp"
@@ -166,7 +175,7 @@
                 <ImageView
                     android:layout_width="38dp"
                     android:layout_height="38dp"
-                    android:src="@drawable/mingcute__chicken_fill" />
+                    android:src="@drawable/energy" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -217,7 +226,7 @@
                 <ImageView
                     android:layout_width="38dp"
                     android:layout_height="38dp"
-                    android:src="@drawable/mingcute__chicken_fill" />
+                    android:src="@drawable/sugr" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -255,7 +264,7 @@
                 <ImageView
                     android:layout_width="38dp"
                     android:layout_height="38dp"
-                    android:src="@drawable/mingcute__chicken_fill" />
+                    android:src="@drawable/fat" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -281,7 +290,7 @@
                 <ImageView
                     android:layout_width="38dp"
                     android:layout_height="38dp"
-                    android:src="@drawable/mingcute__chicken_fill" />
+                    android:src="@drawable/carbo" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -346,6 +355,43 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:layout_marginHorizontal="16dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:src="@drawable/baseline_account_circle_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="lastime" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginHorizontal="16dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:src="@drawable/baseline_account_circle_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="regrets" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginHorizontal="16dp"
                 android:orientation="vertical">
 
                 <ImageView
@@ -362,7 +408,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="32dp"
+                android:layout_marginHorizontal="16dp"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -381,6 +427,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:layout_marginHorizontal="16dp"
                 android:orientation="vertical">
 
                 <ImageView
@@ -395,7 +442,6 @@
             </LinearLayout>
 
         </LinearLayout>
-
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
