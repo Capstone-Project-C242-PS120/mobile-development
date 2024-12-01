@@ -11,6 +11,7 @@ import com.example.capstone.data.remote.retrofit.ApiService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.HttpException
 
 class Repository private constructor(
@@ -89,18 +90,18 @@ class Repository private constructor(
     suspend fun saveAnalyzeFood(
         token: String,
         image: MultipartBody.Part,
-        name: String,
-        nutriscore: Double,
-        grade: Char,
-        tags: String,
-        calories: Double,
-        fat: Double,
-        sugar: Double,
-        fiber: Double,
-        protein: Double,
-        natrium: Double,
-        vegetable: Double,
-        foodRate: Int?
+        name: RequestBody,
+        nutriscore: RequestBody,
+        grade: RequestBody,
+        tags: RequestBody,
+        calories: RequestBody,
+        fat: RequestBody,
+        sugar: RequestBody,
+        fiber: RequestBody,
+        protein: RequestBody,
+        natrium: RequestBody,
+        vegetable: RequestBody,
+        foodRate: RequestBody?
     ): Result<FoodAnalyzeSaveResponse> {
         return withContext(Dispatchers.IO) {
             try {

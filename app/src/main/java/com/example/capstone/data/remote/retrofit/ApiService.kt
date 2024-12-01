@@ -7,6 +7,7 @@ import com.example.capstone.data.remote.response.GetProfileResponse
 import com.example.capstone.data.remote.response.LoginResponse
 import com.example.capstone.data.remote.response.RegisterResponse
 import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
@@ -49,18 +50,18 @@ interface ApiService {
     suspend fun saveAnalyzeFood(
         @Header("Authorization") token: String,
         @Part image: MultipartBody.Part,
-        @Part("name") name: String,
-        @Part("nutriscore") nutriscore: Double,
-        @Part("grade") grade: Char,
-        @Part("tags") tags: String,
-        @Part("calories") calories: Double,
-        @Part("fat") fat: Double,
-        @Part("sugar") sugar: Double,
-        @Part("fiber") fiber: Double,
-        @Part("protein") protein: Double,
-        @Part("natrium") natrium: Double,
-        @Part("vegetable") vegetable: Double,
-        @Part("food_rate") foodRate: Int?
+        @Part("name") name: RequestBody,
+        @Part("nutriscore") nutriscore: RequestBody,
+        @Part("grade") grade: RequestBody,
+        @Part("tags") tags: RequestBody,
+        @Part("calories") calories: RequestBody,
+        @Part("fat") fat: RequestBody,
+        @Part("sugar") sugar: RequestBody,
+        @Part("fiber") fiber: RequestBody,
+        @Part("protein") protein: RequestBody,
+        @Part("natrium") natrium: RequestBody,
+        @Part("vegetable") vegetable: RequestBody,
+        @Part("food_rate") foodRate: RequestBody?
     ): FoodAnalyzeSaveResponse
 
 

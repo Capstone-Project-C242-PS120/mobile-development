@@ -23,6 +23,7 @@ import com.example.capstone.utils.uriToFile
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
+import okhttp3.RequestBody.Companion.toRequestBody
 
 class ScanFoodDetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityScanFoodDetailBinding
@@ -84,50 +85,58 @@ class ScanFoodDetailActivity : AppCompatActivity() {
     }
 
     private fun saveFood(token: String, imageUriString: String?, analyzeData: DataAnalyze?) {
-        val imageUri = Uri.parse(imageUriString)
-        val file = uriToFile(imageUri!!, this).reduceFileImage()
-        val requestImageFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
-        val image = MultipartBody.Part.createFormData(
-            "image",
-            file.name,
-            requestImageFile
-        )
+        // Check if the image URI string is null or empty
+        if (imageUriString.isNullOrEmpty()) {
+            Toast.makeText(this, "Image URI is missing", Toast.LENGTH_SHORT).show()
+            return
+        }
 
+        val imageUri = Uri.parse(imageUriString)
+        val file = uriToFile(imageUri, this).reduceFileImage()
+        val requestImageFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
+        val image = MultipartBody.Part.createFormData("image", file.name, requestImageFile)
+
+        // Retrieve the food name and validate it
         val foodName = binding.edtFoodName.text.toString().trim()
         if (foodName.isEmpty()) {
             Toast.makeText(this, getString(R.string.harap_masukan_nama_makanan), Toast.LENGTH_SHORT).show()
             return
         }
-        val tags = selectedCategories.joinToString(", ")
-        val grade = analyzeData?.grade ?: 'C'
-        val nutriscore = analyzeData?.nutriscore ?: 0.0
-        val calories = analyzeData?.calories ?: 0.0
-        val fat = analyzeData?.fat ?: 0.0
-        val sugar = analyzeData?.sugar ?: 0.0
-        val fiber = analyzeData?.fiber ?: 0.0
-        val protein = analyzeData?.protein ?: 0.0
-        val natrium = analyzeData?.natrium ?: 0.0
-        val vegetable = analyzeData?.vegetable ?: 0.0
-        val foodRateString = binding.foodRate.text.toString()
-        val foodRate = foodRateString.toIntOrNull() ?: 1
 
+        // Convert parameters to RequestBody
+        val nameRequestBody = foodName.toRequestBody("text/plain".toMediaTypeOrNull())
+        val tagsRequestBody = selectedCategories.joinToString(", ").toRequestBody("text/plain".toMediaTypeOrNull())
+        val gradeRequestBody = (analyzeData?.grade ?: 'C').toString().toRequestBody("text/plain".toMediaTypeOrNull())
+        val nutriscoreRequestBody = (analyzeData?.nutriscore ?: 0.0).toString().toRequestBody("text/plain".toMediaTypeOrNull())
+        val caloriesRequestBody = (analyzeData?.calories ?: 0.0).toString().toRequestBody("text/plain".toMediaTypeOrNull())
+        val fatRequestBody = (analyzeData?.fat ?: 0.0).toString().toRequestBody("text/plain".toMediaTypeOrNull())
+        val sugarRequestBody = (analyzeData?.sugar ?: 0.0).toString().toRequestBody("text/plain".toMediaTypeOrNull())
+        val fiberRequestBody = (analyzeData?.fiber ?: 0.0).toString().toRequestBody("text/plain".toMediaTypeOrNull())
+        val proteinRequestBody = (analyzeData?.protein ?: 0.0).toString().toRequestBody("text/plain".toMediaTypeOrNull())
+        val natriumRequestBody = (analyzeData?.natrium ?: 0.0).toString().toRequestBody("text/plain".toMediaTypeOrNull())
+        val vegetableRequestBody = (analyzeData?.vegetable ?: 0.0).toString().toRequestBody("text/plain".toMediaTypeOrNull())
+        val foodRateRequestBody = binding.foodRate.text.toString().toIntOrNull()?.toString()?.toRequestBody("text/plain".toMediaTypeOrNull())
+            ?: "1".toRequestBody("text/plain".toMediaTypeOrNull()) // Default to "1" if null or invalid
+
+        // Call the ViewModel to save the food
         viewModel.saveAnalyzeFood(
             token,
             image,
-            foodName,
-            nutriscore,
-            grade,
-            tags,
-            calories,
-            fat,
-            sugar,
-            fiber,
-            protein,
-            natrium,
-            vegetable,
-            foodRate
+            nameRequestBody,
+            nutriscoreRequestBody,
+            gradeRequestBody,
+            tagsRequestBody,
+            caloriesRequestBody,
+            fatRequestBody,
+            sugarRequestBody,
+            fiberRequestBody,
+            proteinRequestBody,
+            natriumRequestBody,
+            vegetableRequestBody,
+            foodRateRequestBody
         )
     }
+
 
 
     private fun showMultiSelectDialog() {

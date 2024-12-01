@@ -8,6 +8,7 @@ import com.example.capstone.data.remote.Repository
 import com.example.capstone.data.remote.response.FoodAnalyzeSaveResponse
 import kotlinx.coroutines.launch
 import okhttp3.MultipartBody
+import okhttp3.RequestBody
 
 class ScanFoodDetailViewModel(private val repository: Repository): ViewModel() {
     private val _isLoading = MutableLiveData<Boolean>()
@@ -19,18 +20,18 @@ class ScanFoodDetailViewModel(private val repository: Repository): ViewModel() {
     fun saveAnalyzeFood(
         token: String,
         image: MultipartBody.Part,
-        name: String,
-        nutriscore: Double,
-        grade: Char,
-        tags: String,
-        calories: Double,
-        fat: Double,
-        sugar: Double,
-        fiber: Double,
-        protein: Double,
-        natrium: Double,
-        vegetable: Double,
-        foodRate: Int?
+        name: RequestBody,
+        nutriscore: RequestBody,
+        grade: RequestBody,
+        tags: RequestBody,
+        calories: RequestBody,
+        fat: RequestBody,
+        sugar: RequestBody,
+        fiber: RequestBody,
+        protein: RequestBody,
+        natrium: RequestBody,
+        vegetable: RequestBody,
+        foodRate: RequestBody?
     ) {
         _isLoading.value = true
         viewModelScope.launch {
