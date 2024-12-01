@@ -18,20 +18,16 @@ class HistoryFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_history, container, false)
 
-        // Initialize RecyclerView
         recyclerView = view.findViewById(R.id.recyclerViewHistory)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-        // Load data from strings.xml
         val foodNames = resources.getStringArray(R.array.data_name)
         val foodCategories = resources.getStringArray(R.array.data_food_category)
         val foodRanks = resources.getStringArray(R.array.data_food_rank)
         val foodImages = resources.getStringArray(R.array.data_food_photo)
 
-        // Populate the list with the data
         for (i in foodNames.indices) {
             val history = History(
                 name = foodNames[i],
@@ -42,7 +38,7 @@ class HistoryFragment : Fragment() {
             list.add(history)
         }
 
-        // Set up the adapter with the populated list
+
         val adapter = HistoryAdapter(list)
         recyclerView.adapter = adapter
 

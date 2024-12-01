@@ -2,6 +2,7 @@ package com.example.capstone.data.remote
 
 import com.example.capstone.data.Result
 import com.example.capstone.data.remote.response.FoodAnalyzeResponse
+import com.example.capstone.data.remote.response.FoodDetailResponse
 import com.example.capstone.data.remote.response.GetProfileResponse
 import com.example.capstone.data.remote.response.LoginResponse
 import com.example.capstone.data.remote.response.RegisterResponse
@@ -76,13 +77,31 @@ class Repository private constructor(
                 if (response.statusCode == 201) {
                     Result.Success(response)
                 } else {
-                    Result.Error(response.message)
+                    Result.Error(response.message.toString())
                 }
             } catch (e: Exception) {
                 Result.Error("${e.message}")
             }
         }
     }
+
+//    suspend fun getFoodDetail(token: String, foodId: Int): Result<FoodDetailResponse> {
+//        return withContext(Dispatchers.IO) {
+//            try {
+//                val authToken = "Bearer $token"
+//                val response = apiService.getfoodDetail(authToken, foodId) // Assuming the API has this endpoint
+//                if (response.statusCode == 200) {
+//                    Result.Success(response)
+//                } else {
+//                    Result.Error(response.message ?: "Failed to fetch food details")
+//                }
+//            } catch (e: Exception) {
+//                Result.Error("Error: ${e.message}")
+//            }
+//        }
+//    }
+
+
 
     companion object {
         @Volatile

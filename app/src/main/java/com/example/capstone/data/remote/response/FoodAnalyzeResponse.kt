@@ -2,44 +2,53 @@ package com.example.capstone.data.remote.response
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import kotlinx.parcelize.Parcelize
+import kotlinx.android.parcel.Parcelize
 
 data class FoodAnalyzeResponse(
 
 	@field:SerializedName("data")
-	val data: AnalyzeData,
+	val data: Data? = null,
 
 	@field:SerializedName("message")
-	val message: String,
+	val message: String? = null,
 
 	@field:SerializedName("statusCode")
-	val statusCode: Int,
+	val statusCode: Int? = null,
 
 	@field:SerializedName("timestamp")
-	val timestamp: String
+	val timestamp: String? = null
 )
 
 @Parcelize
-data class AnalyzeData(
+data class Data(
 
-	@field:SerializedName("carbo")
-	val carbo: Int,
+	@field:SerializedName("fiber")
+	val fiber: Double? = null,
 
-	@field:SerializedName("vitaminc")
-	val vitaminc: Int,
+	@field:SerializedName("grade")
+	val grade: String? = null,
 
 	@field:SerializedName("protein")
-	val protein: Int,
+	val protein: Double? = null,
 
 	@field:SerializedName("fat")
-	val fat: Int,
+	val fat: Double? = null,
 
-	@field:SerializedName("rank")
-	val rank: String,
+	@field:SerializedName("nutriscore")
+	val nutriscore: Double? = null,
 
 	@field:SerializedName("calories")
-	val calories: Int,
+	val calories: Double? = null,
+
+	@field:SerializedName("natrium")
+	val natrium: Double? = null,
+
+	@field:SerializedName("type")
+	val type: String? = null,
+
+	@field:SerializedName("vegetable")
+		val vegetable: Double? = null,
 
 	@field:SerializedName("sugar")
-	val sugar: Int
-): Parcelable
+	val sugar: Double? = null
+) : Parcelable

@@ -34,13 +34,11 @@ class FragmentDashboard : Fragment() {
     }
 
     private fun loadRecentHistory() {
-        // Example data
         val recentHistoryNames = resources.getStringArray(R.array.data_name)
         val recentHistoryCategories = resources.getStringArray(R.array.data_food_category)
         val recentHistoryRanks = resources.getStringArray(R.array.data_food_rank)
         val recentHistoryPhotos = resources.getStringArray(R.array.data_food_photo)
 
-        // Populate the list with data
         for (i in recentHistoryNames.indices) {
             val history = History(
                 name = recentHistoryNames[i],

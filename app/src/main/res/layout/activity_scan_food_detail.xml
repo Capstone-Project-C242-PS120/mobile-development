@@ -59,7 +59,7 @@
             android:id="@+id/edt_food_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:fontFamily="@font/poppins_bold"
             android:hint="@string/contoh_nama_makanan"
             android:textColor="@color/black"
@@ -70,6 +70,32 @@
             app:layout_constraintTop_toBottomOf="@+id/txt_food_name" />
 
         <TextView
+            android:id="@+id/txt_food_kategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Tambahkan Kategori"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_food_name" />
+
+        <TextView
+            android:id="@+id/selectedCategories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/spinner_prompt"
+            android:padding="10dp"
+            android:background="@drawable/food_rank_default"
+            android:drawableEnd="@drawable/ic_arrow_down"
+            android:textColor="@android:color/black"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_food_kategory"
+            android:onClick="showMultiSelectDialog" />
+
+        <TextView
             android:id="@+id/txt_food_rank"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -77,7 +103,7 @@
             android:fontFamily="@font/poppins_regular"
             android:text="@string/peringkat_makanan"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edt_food_name" />
+            app:layout_constraintTop_toBottomOf="@+id/selectedCategories" />
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -185,7 +211,7 @@
                 <ImageView
                     android:layout_width="38dp"
                     android:layout_height="38dp"
-                    android:src="@drawable/mingcute__chicken_fill" />
+                    android:src="@drawable/energy" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -236,7 +262,7 @@
                 <ImageView
                     android:layout_width="38dp"
                     android:layout_height="38dp"
-                    android:src="@drawable/mingcute__chicken_fill" />
+                    android:src="@drawable/sugr" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -274,7 +300,7 @@
                 <ImageView
                     android:layout_width="38dp"
                     android:layout_height="38dp"
-                    android:src="@drawable/mingcute__chicken_fill" />
+                    android:src="@drawable/fat" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -300,7 +326,7 @@
                 <ImageView
                     android:layout_width="38dp"
                     android:layout_height="38dp"
-                    android:src="@drawable/mingcute__chicken_fill" />
+                    android:src="@drawable/carbo" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -342,16 +368,38 @@
 
         </LinearLayout>
 
-        <Spinner
-            android:id="@+id/spinner_category"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:prompt="@string/spinner_prompt"
-            android:background="@drawable/food_rank_default"
-            android:drawableEnd="@drawable/ic_arrow_down"
-            android:layout_marginVertical="4dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout7" />
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/multiSelectTextView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="Select Categories"-->
+<!--            android:padding="16dp"-->
+<!--            android:background="@drawable/food_rank_default"-->
+<!--            android:drawableEnd="@drawable/ic_arrow_down"-->
+<!--            android:textColor="@android:color/black"-->
+<!--            android:clickable="true"-->
+<!--            android:focusable="true"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/linearLayout7"-->
+<!--            android:onClick="showMultiSelectDialog" />-->
+
+<!--        <MultiAutoCompleteTextView-->
+<!--            android:id="@+id/multiSelectCategory"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="45dp"-->
+<!--            android:layout_marginVertical="4dp"-->
+<!--            android:background="@drawable/food_rank_default"-->
+<!--            android:drawableEnd="@drawable/ic_arrow_down"-->
+<!--            android:hint="@string/spinner_prompt"-->
+<!--            android:inputType="none"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/linearLayout7"-->
+<!--            android:importantForAccessibility="yes"-->
+<!--            android:dropDownHeight="200dp"-->
+<!--            android:dropDownWidth="match_parent"-->
+<!--             />-->
 
 
         <TextView
@@ -361,7 +409,7 @@
             android:layout_marginTop="6dp"
             android:text="@string/apakah_kamu_menyukai_makanan_ini"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinner_category" />
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout7" />
 
         <LinearLayout
             android:id="@+id/ratingDetails"
@@ -378,6 +426,43 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:layout_marginHorizontal="16dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:src="@drawable/baseline_account_circle_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="lastime" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginHorizontal="16dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:src="@drawable/baseline_account_circle_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="regrets" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginHorizontal="16dp"
                 android:orientation="vertical">
 
                 <ImageView
@@ -394,7 +479,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="32dp"
+                android:layout_marginHorizontal="16dp"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -413,6 +498,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:layout_marginHorizontal="16dp"
                 android:orientation="vertical">
 
                 <ImageView

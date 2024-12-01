@@ -1,6 +1,7 @@
 package com.example.capstone.data.remote.retrofit
 
 import com.example.capstone.data.remote.response.FoodAnalyzeResponse
+import com.example.capstone.data.remote.response.FoodDetailResponse
 import com.example.capstone.data.remote.response.GetProfileResponse
 import com.example.capstone.data.remote.response.LoginResponse
 import com.example.capstone.data.remote.response.RegisterResponse
@@ -40,4 +41,16 @@ interface ApiService {
         @Header("Authorization") token: String,
         @Part image: MultipartBody.Part
     ): FoodAnalyzeResponse
+
+    @Multipart
+    @POST("api/food/detail")
+    suspend fun getfoodDetail(
+        @Header("Authorization") token: String,
+        @Part image: MultipartBody.Part
+    ): FoodDetailResponse
+
+
+
+
+
 }

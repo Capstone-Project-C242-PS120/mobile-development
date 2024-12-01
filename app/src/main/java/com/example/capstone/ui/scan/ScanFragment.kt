@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -86,25 +87,40 @@ class ScanFragment : Fragment() {
     }
 
     private fun analyzeFood(token: String) {
-        if (currentImageUri == null) {
-            Toast.makeText(requireContext(),
-                getString(R.string.ambil_gambar_terlebih_dahulu), Toast.LENGTH_SHORT).show()
-            return
+        try {
+            if (currentImageUri == null) {
+                val message = getString(R.string.ambil_gambar_terlebih_dahulu)
+                Log.e("AnalyzeFood", "Error: $message")
+                Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+                return
+            }
+
+            val file = uriToFile(currentImageUri!!, requireContext()).reduceFileImage()
+
+            Log.d("AnalyzeFood", "File path: ${file.absolutePath}")
+            Log.d("AnalyzeFood", "File size: ${file.length()} bytes")
+
+
+            val requestImageFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
+
+            val multipartBody = MultipartBody.Part.createFormData(
+                "image",
+                file.name,
+                requestImageFile
+            )
+
+            Log.d("AnalyzeFood", "MultipartBody: $multipartBody")
+
+            viewModel.analyzeFood(token, multipartBody)
+
+        } catch (e: Exception) {
+
+            Log.e("AnalyzeFood", "Error during image analysis: ${e.message}", e)
+
+            Toast.makeText(requireContext(), "Error: ${e.message}", Toast.LENGTH_SHORT).show()
         }
-
-        val file = uriToFile(currentImageUri!!, requireContext()).reduceFileImage()
-        val requestImageFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
-        val multipartBody = MultipartBody.Part.createFormData(
-            "image",
-            file.name,
-            requestImageFile
-        )
-
-        viewModel.analyzeFood(
-            token,
-            multipartBody
-        )
     }
+
 
     private fun startCamera() {
         currentImageUri = getImageUri(requireContext())
