@@ -1,7 +1,10 @@
 package com.example.capstone.ui.fooddetail
 
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
@@ -23,6 +26,7 @@ class FoodDetailActivity : AppCompatActivity() {
     private val viewModel: FoodDetailViewModel by viewModels {
         ViewModelFactory.getInstance(this)
     }
+    private var foodRate = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -42,6 +46,7 @@ class FoodDetailActivity : AppCompatActivity() {
             return
         }
 
+        getFoodRate()
         viewModel.detailFood(token, foodId)
 
         observeViewModel()
@@ -49,12 +54,73 @@ class FoodDetailActivity : AppCompatActivity() {
             finish()
         }
         binding.btnSave.setOnClickListener {
-            viewModel.saveFood(token, foodId, 3)
+            viewModel.saveFood(token, foodId, foodRate)
         }
 
 
     }
 
+    private fun getFoodRate() {
+        val rateImages = listOf(
+            binding.imgRate1,
+            binding.imgRate2,
+            binding.imgRate3,
+            binding.imgRate4,
+            binding.imgRate5
+        )
+
+
+        val coloredImages = listOf(
+            R.drawable.ic_rate_4,
+            R.drawable.ic_rate_4,
+            R.drawable.ic_rate_4,
+            R.drawable.ic_rate_4,
+            R.drawable.ic_rate_4,
+        )
+
+        val grayImages = listOf(
+            R.drawable.ic_bw_rate_3,
+            R.drawable.ic_bw_rate_3,
+            R.drawable.ic_bw_rate_3,
+            R.drawable.ic_bw_rate_3,
+            R.drawable.ic_bw_rate_3,
+        )
+
+        rateImages.forEachIndexed { index, imageView ->
+            imageView.setOnClickListener {
+                foodRate = index + 1
+
+                rateImages.forEachIndexed { i, img ->
+                    img.setImageResource(grayImages[i])
+                }
+
+                imageView.setImageResource(coloredImages[index])
+                animateZoom(imageView)
+            }
+        }
+    }
+
+
+    private fun animateZoom(view: View) {
+        val scaleUpX = ObjectAnimator.ofFloat(view, "scaleX", 1.2f).apply {
+            duration = 150
+        }
+        val scaleUpY = ObjectAnimator.ofFloat(view, "scaleY", 1.2f).apply {
+            duration = 150
+        }
+        val scaleDownX = ObjectAnimator.ofFloat(view, "scaleX", 1f).apply {
+            duration = 150
+        }
+        val scaleDownY = ObjectAnimator.ofFloat(view, "scaleY", 1f).apply {
+            duration = 150
+        }
+
+        AnimatorSet().apply {
+            play(scaleUpX).with(scaleUpY)
+            play(scaleDownX).with(scaleDownY).after(scaleUpX)
+            start()
+        }
+    }
 
     private fun observeViewModel() {
         viewModel.isLoading.observe(this) { isLoading ->

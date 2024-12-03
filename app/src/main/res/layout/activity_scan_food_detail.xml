@@ -418,11 +418,11 @@
             android:layout_marginTop="16dp"
             android:gravity="center_horizontal"
             android:orientation="horizontal"
-
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_rating">
 
             <LinearLayout
+                android:id="@+id/rate_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -430,9 +430,10 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/img_rate_1"
                     android:layout_width="38dp"
                     android:layout_height="38dp"
-                    android:src="@drawable/baseline_account_circle_24" />
+                    android:src="@drawable/ic_bw_rate_3" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -441,6 +442,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/rate_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -448,9 +450,10 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/img_rate_2"
                     android:layout_width="38dp"
                     android:layout_height="38dp"
-                    android:src="@drawable/baseline_account_circle_24" />
+                    android:src="@drawable/ic_bw_rate_3" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -459,6 +462,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/rate_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -466,9 +470,10 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/img_rate_3"
                     android:layout_width="38dp"
                     android:layout_height="38dp"
-                    android:src="@drawable/baseline_account_circle_24" />
+                    android:src="@drawable/ic_bw_rate_3" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -477,6 +482,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/rate_4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
@@ -484,9 +490,10 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/img_rate_4"
                     android:layout_width="38dp"
                     android:layout_height="38dp"
-                    android:src="@drawable/baseline_account_circle_24" />
+                    android:src="@drawable/ic_bw_rate_3" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -495,6 +502,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/rate_5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -502,26 +510,18 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/img_rate_5"
                     android:layout_width="38dp"
                     android:layout_height="38dp"
-                    android:src="@drawable/baseline_account_circle_24" />
+                    android:src="@drawable/ic_bw_rate_3" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Favorite" />
+                    android:text="Love" />
             </LinearLayout>
 
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/foodRate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
 
         <ProgressBar
             android:id="@+id/progress_bar"
