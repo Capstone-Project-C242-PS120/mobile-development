@@ -20,59 +20,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
-    <string-array name="data_name">
-        <item>Apple</item>
-        <item>Banana</item>
-        <item>Carrot</item>
-        <item>Broccoli</item>
-        <item>Spinach</item>
-        <item>Chicken Breast</item>
-        <item>Salmon</item>
-        <item>Almonds</item>
-        <item>Oats</item>
-        <item>Yogurt</item>
-    </string-array>
-
-    <string-array name="data_food_photo">
-        <item>https://images.unsplash.com/photo-1567306226416-28f0efdc88ce</item> <!-- Apple -->
-        <item>https://images.unsplash.com/photo-1574226516831-e1dff420485d</item> <!-- Banana -->
-        <item>https://images.unsplash.com/photo-1612222866161-7b3c6ee7151b</item> <!-- Carrot -->
-        <item>https://images.unsplash.com/photo-1627308595229-7830a5c91f9f</item> <!-- Broccoli -->
-        <item>https://images.unsplash.com/photo-1592928305900-e91db57698c1</item> <!-- Spinach -->
-        <item>https://images.unsplash.com/photo-1617196033593-ec2b8ebdbde6</item> <!-- Chicken Breast -->
-        <item>https://images.unsplash.com/photo-1582560475321-11d48a0193fd</item> <!-- Salmon -->
-        <item>https://images.unsplash.com/photo-1588167105028-e38b3b271f74</item> <!-- Almonds -->
-        <item>https://images.unsplash.com/photo-1604908811998-6a9f82c937c5</item> <!-- Oats -->
-        <item>https://images.unsplash.com/photo-1576671080666-cfdbab8d9f18</item> <!-- Yogurt -->
-    </string-array>
-
-
-    <string-array name="data_food_rank">
-        <item>A</item>
-        <item>A</item>
-        <item>B</item>
-        <item>A</item>
-        <item>A</item>
-        <item>B</item>
-        <item>A</item>
-        <item>B</item>
-        <item>A</item>
-        <item>A</item>
-    </string-array>
-
-    <string-array name="data_food_category">
-        <item>Fruit</item>
-        <item>Fruit</item>
-        <item>Vegetable</item>
-        <item>Vegetable</item>
-        <item>Vegetable</item>
-        <item>Protein</item>
-        <item>Protein</item>
-        <item>Nut</item>
-        <item>Grain</item>
-        <item>Dairy</item>
-    </string-array>
-
     <string-array name="categories">
         <item>Pilih Kategori</item>
         <item>Buah</item>
