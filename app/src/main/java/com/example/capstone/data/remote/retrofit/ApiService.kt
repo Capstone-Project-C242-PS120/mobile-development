@@ -81,6 +81,12 @@ interface ApiService {
         @Query("id") id: Int
     ): FoodDetailResponse
 
-
+    @FormUrlEncoded
+    @POST("api/food/save")
+    suspend fun saveFood(
+        @Header("Authorization") token: String,
+        @Field("food_id") foodId: Int,
+        @Field("food_rate") foodRate: Int?
+    ): FoodAnalyzeSaveResponse
 
 }

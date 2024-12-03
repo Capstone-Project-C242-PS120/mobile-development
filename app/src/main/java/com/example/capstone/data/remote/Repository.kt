@@ -193,6 +193,32 @@ class Repository private constructor(
         }
     }
 
+    suspend fun saveFood(
+        token: String,
+        foodId: Int,
+        foodRate: Int?
+    ): Result<FoodAnalyzeSaveResponse> {
+        return withContext(Dispatchers.IO) {
+            try {
+                val authToken = "Bearer $token"
+                val response = apiService.saveFood(authToken, foodId, foodRate)
+                if (response.statusCode == 201) {
+                    Result.Success(response)
+                } else {
+                    Result.Error(response.message)
+                }
+            } catch (e: HttpException) {
+                val errorMessage = when (e.code()) {
+                    401 -> "Unauthorized access"
+                    else -> "Error: ${e.message()}"
+                }
+                Result.Error(errorMessage)
+            } catch (e: Exception) {
+                Result.Error("Error: ${e.message ?: "Unknown error"}")
+            }
+        }
+    }
+
     companion object {
         @Volatile
         private var INSTANCE: Repository? = null

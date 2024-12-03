@@ -48,9 +48,13 @@ class FoodDetailActivity : AppCompatActivity() {
         binding.close.setOnClickListener {
             finish()
         }
+        binding.btnSave.setOnClickListener {
+            viewModel.saveFood(token, foodId, 3)
+        }
 
 
     }
+
 
     private fun observeViewModel() {
         viewModel.isLoading.observe(this) { isLoading ->
@@ -63,6 +67,16 @@ class FoodDetailActivity : AppCompatActivity() {
                 is Result.Success -> {
                     val foodDetail = result.data.data
                     setupView(foodDetail)
+                }
+            }
+        }
+        viewModel.saveResult.observe(this) { result ->
+            when(result) {
+                is Result.Loading -> showLoading(true)
+                is Result.Error -> Toast.makeText(this, result.error, Toast.LENGTH_SHORT).show()
+                is Result.Success -> {
+                    Toast.makeText(this, result.data.message, Toast.LENGTH_SHORT).show()
+                    finish()
                 }
             }
         }
