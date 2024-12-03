@@ -60,10 +60,10 @@
             android:textSize="12sp" />
 
         <TextView
+            android:id="@+id/txt_point"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="10.000 Point"
             android:fontFamily="@font/poppins_bold"
             android:textSize="16sp"
             android:textColor="?attr/colorOnBackground" />

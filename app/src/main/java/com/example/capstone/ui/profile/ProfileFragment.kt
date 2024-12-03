@@ -88,6 +88,7 @@ class ProfileFragment : Fragment() {
                     val profileData = result.data.data
                     binding.txtName.text = profileData.name
                     binding.txtEmail.text = profileData.email
+                    binding.txtPoint.text = "${profileData.point} Point"
                 }
                 is Result.Error -> {
                     showLoading(false)

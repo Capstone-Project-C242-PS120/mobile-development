@@ -26,5 +26,8 @@ data class ProfileData(
 	val id: String,
 
 	@field:SerializedName("email")
-	val email: String
+	val email: String,
+
+	@field:SerializedName("point")
+	val point: Int
 )
