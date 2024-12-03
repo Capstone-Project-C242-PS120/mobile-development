@@ -7,6 +7,7 @@ import com.example.capstone.data.remote.response.FoodDetailResponse
 import com.example.capstone.data.remote.response.GetProfileResponse
 import com.example.capstone.data.remote.response.LoginResponse
 import com.example.capstone.data.remote.response.RegisterResponse
+import com.example.capstone.data.remote.response.SearchFoodResponse
 import com.example.capstone.data.remote.retrofit.ApiService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -139,8 +140,33 @@ class Repository private constructor(
         }
     }
 
-
-
+    suspend fun searchFood(
+        token: String,
+        page: Int?,
+        limit: Int?,
+        name: String?,
+        tags: String?
+    ): Result<SearchFoodResponse> {
+        return withContext(Dispatchers.IO) {
+            try {
+                val authToken = "Bearer $token"
+                val response = apiService.searchFood(authToken, page, limit, name, tags)
+                if (response.statusCode == 200) {
+                    Result.Success(response)
+                } else {
+                    Result.Error(response.message)
+                }
+            } catch (e: HttpException) {
+                val errorMessage = when (e.code()) {
+                    401 -> "Unauthorized access"
+                    else -> "Error: ${e.message()}"
+                }
+                Result.Error(errorMessage)
+            } catch (e: Exception) {
+                Result.Error("Error: ${e.message ?: "Unknown error"}")
+            }
+        }
+    }
 
     companion object {
         @Volatile

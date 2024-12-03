@@ -1,29 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="172dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="4dp"
+        app:cardCornerRadius="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_margin="16dp"
-        app:cardCornerRadius="16dp">
+        app:layout_constraintTop_toTopOf="parent">
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <ImageView
+                android:id="@+id/img_search"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:scaleType="centerCrop"
                 android:src="@drawable/pizza"
-                android:scaleType="centerCrop" />
+                android:contentDescription="@string/image_welcome" />
 
             <View
                 android:layout_width="match_parent"
@@ -35,40 +37,48 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:orientation="horizontal"
             android:layout_margin="4dp"
-            android:gravity="center_vertical">
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/search_food_name"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:fontFamily="@font/poppins_medium"
-                android:textSize="15sp"
                 android:layout_marginHorizontal="16dp"
-                android:text="Food Name" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingHorizontal="8dp"
-                android:background="@drawable/rounded_search_card_category"
-                android:text="Category"
-                android:paddingVertical="2dp"
-                android:textSize="12sp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:fontFamily="@font/poppins_medium"
+                android:maxWidth="200dp"
+                android:singleLine="true"
+                android:text="Food Name"
                 android:textColor="@color/white"
-                android:layout_marginRight="8dp" />
+                android:textSize="15sp" />
 
             <TextView
+                android:id="@+id/search_type"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/rounded_search_card_category"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="2dp"
+                android:text="Type"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/search_grade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/rounded_search_card_category"
+                android:backgroundTint="@color/rankd_d"
                 android:paddingHorizontal="6dp"
                 android:paddingVertical="2dp"
-                android:backgroundTint="@color/rank_c"
-                android:textSize="12sp"
+                android:text="C"
                 android:textColor="@color/white"
-                android:background="@drawable/rounded_search_card_category"
-                android:text="C" />
+                android:textSize="12sp" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

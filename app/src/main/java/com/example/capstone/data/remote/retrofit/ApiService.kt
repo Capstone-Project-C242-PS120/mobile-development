@@ -6,6 +6,7 @@ import com.example.capstone.data.remote.response.FoodDetailResponse
 import com.example.capstone.data.remote.response.GetProfileResponse
 import com.example.capstone.data.remote.response.LoginResponse
 import com.example.capstone.data.remote.response.RegisterResponse
+import com.example.capstone.data.remote.response.SearchFoodResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.http.Field
@@ -16,6 +17,7 @@ import retrofit2.http.Multipart
 import retrofit2.http.POST
 import retrofit2.http.Part
 import retrofit2.http.PartMap
+import retrofit2.http.Query
 
 interface ApiService {
     @FormUrlEncoded
@@ -46,7 +48,7 @@ interface ApiService {
     ): FoodAnalyzeResponse
 
     @Multipart
-    @POST("/api/food/analyze/save")
+    @POST("api/food/analyze/save")
     suspend fun saveAnalyzeFood(
         @Header("Authorization") token: String,
         @Part image: MultipartBody.Part,
@@ -64,6 +66,14 @@ interface ApiService {
         @Part("food_rate") foodRate: RequestBody?
     ): FoodAnalyzeSaveResponse
 
+    @GET("api/food/filter")
+    suspend fun searchFood(
+        @Header("Authorization") token: String,
+        @Query("page") page: Int? = 1,
+        @Query("limit") limit: Int? = 10,
+        @Query("name") name: String? = null,
+        @Query("tags") tags: String? = null
+    ): SearchFoodResponse
 
 
 
