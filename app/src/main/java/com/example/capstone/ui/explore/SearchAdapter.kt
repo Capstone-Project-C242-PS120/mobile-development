@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.capstone.R
 import com.example.capstone.data.remote.response.DataItem
 import com.example.capstone.databinding.SearchCardBinding
 
@@ -18,8 +19,9 @@ class SearchAdapter(private val onItemClick: (DataItem) -> Unit): ListAdapter<Da
                 searchType.text = item.type
                 searchGrade.text = item.grade
 
+                val imageUrl = item.imageUrl
                 Glide.with(root.context)
-                    .load(item.imageUrl)
+                    .load(if(imageUrl.isNullOrEmpty()) R.drawable.image_default else imageUrl)
                     .into(imgSearch)
 
                 root.setOnClickListener {
