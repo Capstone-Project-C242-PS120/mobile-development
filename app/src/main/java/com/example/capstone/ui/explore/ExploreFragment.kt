@@ -46,7 +46,6 @@ class ExploreFragment : Fragment() {
                 putExtra("ITEM_ID", selectedItem.id)
             }
             requireContext().startActivity(intent)
-
         }
 
         binding.rcSearch.apply {

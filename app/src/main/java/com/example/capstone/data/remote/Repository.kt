@@ -5,6 +5,7 @@ import com.example.capstone.data.remote.response.FoodAnalyzeResponse
 import com.example.capstone.data.remote.response.FoodAnalyzeSaveResponse
 import com.example.capstone.data.remote.response.FoodDetailResponse
 import com.example.capstone.data.remote.response.GetProfileResponse
+import com.example.capstone.data.remote.response.HistoryFoodResponse
 import com.example.capstone.data.remote.response.LoginResponse
 import com.example.capstone.data.remote.response.RegisterResponse
 import com.example.capstone.data.remote.response.SearchFoodResponse
@@ -203,6 +204,28 @@ class Repository private constructor(
                 val authToken = "Bearer $token"
                 val response = apiService.saveFood(authToken, foodId, foodRate)
                 if (response.statusCode == 201) {
+                    Result.Success(response)
+                } else {
+                    Result.Error(response.message)
+                }
+            } catch (e: HttpException) {
+                val errorMessage = when (e.code()) {
+                    401 -> "Unauthorized access"
+                    else -> "Error: ${e.message()}"
+                }
+                Result.Error(errorMessage)
+            } catch (e: Exception) {
+                Result.Error("Error: ${e.message ?: "Unknown error"}")
+            }
+        }
+    }
+
+    suspend fun foodHistory(token: String): Result<HistoryFoodResponse> {
+        return withContext(Dispatchers.IO) {
+            try {
+                val authToken = "Bearer $token"
+                val response = apiService.foodHistory(authToken)
+                if (response.statusCode == 200) {
                     Result.Success(response)
                 } else {
                     Result.Error(response.message)

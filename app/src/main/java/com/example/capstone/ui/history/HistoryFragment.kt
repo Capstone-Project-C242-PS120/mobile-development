@@ -1,47 +1,84 @@
 package com.example.capstone.ui.history
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.capstone.R
+import com.example.capstone.data.Result
+import com.example.capstone.databinding.FragmentHistoryBinding
+import com.example.capstone.pref.SessionManager
+import com.example.capstone.ui.factory.ViewModelFactory
+import com.example.capstone.ui.fooddetail.FoodDetailActivity
 
 class HistoryFragment : Fragment() {
+    private var _binding: FragmentHistoryBinding? = null
+    private val binding get() = _binding!!
+    private lateinit var sessionManager: SessionManager
+    private val viewModel: HistoryViewModel by viewModels {
+        ViewModelFactory.getInstance(requireContext())
+    }
+    private lateinit var historyAdapter: HistoryAdapter
 
-    private lateinit var recyclerView: RecyclerView
-    private val list = ArrayList<History>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_history, container, false)
+    ): View {
+       _binding = FragmentHistoryBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
-        recyclerView = view.findViewById(R.id.recyclerViewHistory)
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        val foodNames = resources.getStringArray(R.array.data_name)
-        val foodCategories = resources.getStringArray(R.array.data_food_category)
-        val foodRanks = resources.getStringArray(R.array.data_food_rank)
-        val foodImages = resources.getStringArray(R.array.data_food_photo)
+        sessionManager = SessionManager(requireContext())
+        val token = sessionManager.getAuthToken().toString()
+        viewModel.foodHistory(token)
 
-        for (i in foodNames.indices) {
-            val history = History(
-                name = foodNames[i],
-                category = foodCategories[i],
-                photo = foodImages[i],
-                rank = foodRanks[i]
-            )
-            list.add(history)
+        historyAdapter = HistoryAdapter { selectedItem ->
+            val intent = Intent(requireContext(), FoodDetailActivity::class.java).apply {
+                putExtra("ITEM_ID", selectedItem.id)
+            }
+            requireContext().startActivity(intent)
         }
 
+        binding.recyclerViewHistory.apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            adapter = historyAdapter
 
-        val adapter = HistoryAdapter(list)
-        recyclerView.adapter = adapter
+        }
 
-        return view
+        observeViewModel()
+    }
+
+    private fun observeViewModel() {
+        viewModel.isLoading.observe(viewLifecycleOwner) { isLoading ->
+            showLoading(isLoading)
+        }
+        viewModel.historyResult.observe(viewLifecycleOwner) { result ->
+            when(result) {
+                is Result.Loading -> showLoading(true)
+                is Result.Error -> Toast.makeText(requireContext(), result.error, Toast.LENGTH_SHORT).show()
+                is Result.Success -> {
+                    val historyFood = result.data.data
+                    if (historyFood.isEmpty()) {
+                        Toast.makeText(requireContext(), "Tidak ada ditemukan", Toast.LENGTH_SHORT).show()
+                    } else {
+                        historyAdapter.submitList(historyFood)
+                    }
+                }
+            }
+        }
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
     }
 }

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="8dp">
+    android:layout_margin="4dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,15 +16,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/imageViewIcon"
+        <androidx.cardview.widget.CardView
             android:layout_width="38dp"
             android:layout_height="38dp"
             android:layout_gravity="center_vertical"
             android:layout_marginHorizontal="16dp"
-            android:background="@drawable/rounded_image_history"
-            android:scaleType="centerCrop"
-            android:src="@drawable/img_welcome" />
+            app:cardCornerRadius="4dp"
+            app:cardElevation="0dp">
+
+            <ImageView
+                android:id="@+id/imageViewIcon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_welcome" />
+        </androidx.cardview.widget.CardView>
+
 
         <LinearLayout
             android:layout_width="0dp"
@@ -39,16 +46,21 @@
                 android:fontFamily="@font/poppins_bold"
                 android:text="Hello, World!"
                 android:textColor="@color/black"
-                android:textSize="13sp" />
+                android:textSize="13sp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:singleLine="true"/>
 
             <TextView
                 android:id="@+id/textViewCategory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_regular"
+                android:fontFamily="@font/poppins_light"
                 android:text="Drink"
-                android:textColor="#979797"
-                android:textSize="11sp" />
+                android:textSize="11sp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:singleLine="true"/>
         </LinearLayout>
 
         <TextView

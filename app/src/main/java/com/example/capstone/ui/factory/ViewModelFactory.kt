@@ -8,6 +8,7 @@ import com.example.capstone.di.Injection
 import com.example.capstone.ui.explore.SearchViewModel
 import com.example.capstone.ui.fooddetail.FoodDetailViewModel
 import com.example.capstone.ui.fooddetail.ScanFoodDetailViewModel
+import com.example.capstone.ui.history.HistoryViewModel
 import com.example.capstone.ui.login.LoginViewModel
 import com.example.capstone.ui.profile.ProfileViewModel
 import com.example.capstone.ui.register.RegisterViewModel
@@ -36,6 +37,9 @@ class ViewModelFactory(private val repository: Repository): ViewModelProvider.Ne
         }
         if (modelClass.isAssignableFrom(FoodDetailViewModel::class.java)) {
             return FoodDetailViewModel(repository) as T
+        }
+        if (modelClass.isAssignableFrom(HistoryViewModel::class.java)) {
+            return HistoryViewModel(repository) as T
         }
         throw IllegalArgumentException("Unknown ViewModel Class: " + modelClass.name)
     }

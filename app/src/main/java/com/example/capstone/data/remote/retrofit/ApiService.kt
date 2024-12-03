@@ -4,6 +4,7 @@ import com.example.capstone.data.remote.response.FoodAnalyzeResponse
 import com.example.capstone.data.remote.response.FoodAnalyzeSaveResponse
 import com.example.capstone.data.remote.response.FoodDetailResponse
 import com.example.capstone.data.remote.response.GetProfileResponse
+import com.example.capstone.data.remote.response.HistoryFoodResponse
 import com.example.capstone.data.remote.response.LoginResponse
 import com.example.capstone.data.remote.response.RegisterResponse
 import com.example.capstone.data.remote.response.SearchFoodResponse
@@ -88,5 +89,10 @@ interface ApiService {
         @Field("food_id") foodId: Int,
         @Field("food_rate") foodRate: Int?
     ): FoodAnalyzeSaveResponse
+
+    @GET("api/user/history")
+    suspend fun foodHistory(
+        @Header("Authorization") token: String
+    ): HistoryFoodResponse
 
 }
