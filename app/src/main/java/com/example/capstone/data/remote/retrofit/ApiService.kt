@@ -1,5 +1,6 @@
 package com.example.capstone.data.remote.retrofit
 
+import com.example.capstone.data.remote.response.DailyScanQuotaResponse
 import com.example.capstone.data.remote.response.FoodAnalyzeResponse
 import com.example.capstone.data.remote.response.FoodAnalyzeSaveResponse
 import com.example.capstone.data.remote.response.FoodDetailResponse
@@ -95,4 +96,8 @@ interface ApiService {
         @Header("Authorization") token: String
     ): HistoryFoodResponse
 
+    @GET("api/user/scan")
+    suspend fun getQuota(
+        @Header("Authorization") token: String
+    ): DailyScanQuotaResponse
 }

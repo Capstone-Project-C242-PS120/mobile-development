@@ -59,6 +59,7 @@ class ScanFragment : Fragment() {
             analyzeFood(token)
         }
 
+        viewModel.getQuota(token)
         observeViewModel()
     }
 
@@ -80,10 +81,29 @@ class ScanFragment : Fragment() {
                 }
             }
         }
+        viewModel.quotaResult.observe(viewLifecycleOwner) { result ->
+            when(result) {
+                is Result.Loading -> {
+                    showLoading(true)
+                }
+                is Result.Error -> {
+                    Toast.makeText(requireContext(), result.error, Toast.LENGTH_SHORT).show()
+                }
+                is Result.Success -> {
+                    binding.txtQuotaScan.text = result.data.data.scanQuota
+                }
+            }
+        }
     }
 
+    override fun onResume() {
+        super.onResume()
+        sessionManager = SessionManager(requireContext())
+        val token = sessionManager.getAuthToken().toString()
+        viewModel.getQuota(token)
+    }
     private fun showLoading(isLoading: Boolean) {
-        binding.loadingLayout.visibility = if (isLoading) View.VISIBLE else View.GONE
+        binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
     }
 
     private fun analyzeFood(token: String) {

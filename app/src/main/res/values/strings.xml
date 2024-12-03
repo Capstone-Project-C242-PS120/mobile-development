@@ -148,6 +148,8 @@
     <string name="keterangan_D">Makanan ini memiliki nilai D. Sebaiknya konsumsi dalam jumlah terbatas.</string>
     <string name="keterangan_E">Makanan ini mendapat nilai E. Hindari konsumsi berlebihan untuk menjaga kesehatan.</string>
     <string name="kategori">Kategori:</string>
+    <string name="limit_nharianmu">Limit \nharianmu:</string>
+    <string name="upgrade_ke_premium">Upgrade ke premium</string>
 
 
 </resources>

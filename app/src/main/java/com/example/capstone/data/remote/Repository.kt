@@ -1,6 +1,7 @@
 package com.example.capstone.data.remote
 
 import com.example.capstone.data.Result
+import com.example.capstone.data.remote.response.DailyScanQuotaResponse
 import com.example.capstone.data.remote.response.FoodAnalyzeResponse
 import com.example.capstone.data.remote.response.FoodAnalyzeSaveResponse
 import com.example.capstone.data.remote.response.FoodDetailResponse
@@ -225,6 +226,28 @@ class Repository private constructor(
             try {
                 val authToken = "Bearer $token"
                 val response = apiService.foodHistory(authToken)
+                if (response.statusCode == 200) {
+                    Result.Success(response)
+                } else {
+                    Result.Error(response.message)
+                }
+            } catch (e: HttpException) {
+                val errorMessage = when (e.code()) {
+                    401 -> "Unauthorized access"
+                    else -> "Error: ${e.message()}"
+                }
+                Result.Error(errorMessage)
+            } catch (e: Exception) {
+                Result.Error("Error: ${e.message ?: "Unknown error"}")
+            }
+        }
+    }
+
+    suspend fun getQuota(token: String): Result<DailyScanQuotaResponse> {
+        return withContext(Dispatchers.IO) {
+            try {
+                val authToken = "Bearer $token"
+                val response = apiService.getQuota(authToken)
                 if (response.statusCode == 200) {
                     Result.Success(response)
                 } else {
