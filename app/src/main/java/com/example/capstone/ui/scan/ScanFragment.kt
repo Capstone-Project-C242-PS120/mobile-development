@@ -18,6 +18,7 @@ import com.example.capstone.databinding.FragmentScanBinding
 import com.example.capstone.pref.SessionManager
 import com.example.capstone.ui.factory.ViewModelFactory
 import com.example.capstone.ui.fooddetail.ScanFoodDetailActivity
+import com.example.capstone.ui.subscriptionpage.SubscriptionActivity
 import com.example.capstone.utils.getImageUri
 import com.example.capstone.utils.reduceFileImage
 import com.example.capstone.utils.uriToFile
@@ -59,6 +60,10 @@ class ScanFragment : Fragment() {
             analyzeFood(token)
         }
 
+        binding.btnPro.setOnClickListener {
+            val intent = Intent(requireContext(), SubscriptionActivity::class.java)
+            startActivity(intent)
+        }
         viewModel.getQuota(token)
         observeViewModel()
     }
