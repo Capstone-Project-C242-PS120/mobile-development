@@ -168,6 +168,31 @@ class Repository private constructor(
         }
     }
 
+    suspend fun detailFood(
+        token: String,
+        id: Int
+    ): Result<FoodDetailResponse> {
+        return withContext(Dispatchers.IO) {
+            try {
+                val authToken = "Bearer $token"
+                val response = apiService.detailFood(authToken, id)
+                if (response.statusCode == 200) {
+                    Result.Success(response)
+                } else {
+                    Result.Error(response.message)
+                }
+            } catch (e: HttpException) {
+                val errorMessage = when (e.code()) {
+                    401 -> "Unauthorized access"
+                    else -> "Error: ${e.message()}"
+                }
+                Result.Error(errorMessage)
+            } catch (e: Exception) {
+                Result.Error("Error: ${e.message ?: "Unknown error"}")
+            }
+        }
+    }
+
     companion object {
         @Volatile
         private var INSTANCE: Repository? = null

@@ -143,6 +143,11 @@
     <string name="text_tukar_point">Silahkan Pilih Hadiahmu untuk ditukar</string>
     <string name="harap_masukan_nama_makanan">Harap masukan nama makanan</string>
     <string name="gambar_tidak_ada">Gambar tidak ada</string>
+    <string name="keterangan_B">Makanan ini mendapat nilai B yang masih tergolong baik untuk dikonsumsi.</string>
+    <string name="keterangan_C">Makanan ini mendapat nilai C. Konsumsi sewajarnya untuk menjaga kesehatan.</string>
+    <string name="keterangan_D">Makanan ini memiliki nilai D. Sebaiknya konsumsi dalam jumlah terbatas.</string>
+    <string name="keterangan_E">Makanan ini mendapat nilai E. Hindari konsumsi berlebihan untuk menjaga kesehatan.</string>
+    <string name="kategori">Kategori:</string>
 
 
 </resources>

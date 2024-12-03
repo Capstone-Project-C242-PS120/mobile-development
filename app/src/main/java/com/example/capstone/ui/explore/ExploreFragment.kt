@@ -1,5 +1,6 @@
 package com.example.capstone.ui.explore
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.view.LayoutInflater
@@ -14,6 +15,7 @@ import com.example.capstone.data.Result
 import com.example.capstone.databinding.FragmentExploreBinding
 import com.example.capstone.pref.SessionManager
 import com.example.capstone.ui.factory.ViewModelFactory
+import com.example.capstone.ui.fooddetail.FoodDetailActivity
 
 class ExploreFragment : Fragment() {
 
@@ -40,7 +42,11 @@ class ExploreFragment : Fragment() {
         val token = sessionManager.getAuthToken().toString()
 
         searchAdapter = SearchAdapter { selectedItem ->
-            Toast.makeText(requireContext(), "Clicked: ${selectedItem.name} with id ${selectedItem.id}", Toast.LENGTH_SHORT).show()
+            val intent = Intent(requireContext(), FoodDetailActivity::class.java).apply {
+                putExtra("ITEM_ID", selectedItem.id)
+            }
+            requireContext().startActivity(intent)
+
         }
 
         binding.rcSearch.apply {

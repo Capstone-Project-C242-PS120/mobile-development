@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.capstone.data.remote.Repository
 import com.example.capstone.di.Injection
 import com.example.capstone.ui.explore.SearchViewModel
+import com.example.capstone.ui.fooddetail.FoodDetailViewModel
 import com.example.capstone.ui.fooddetail.ScanFoodDetailViewModel
 import com.example.capstone.ui.login.LoginViewModel
 import com.example.capstone.ui.profile.ProfileViewModel
@@ -32,6 +33,9 @@ class ViewModelFactory(private val repository: Repository): ViewModelProvider.Ne
         }
         if (modelClass.isAssignableFrom(SearchViewModel::class.java)) {
             return SearchViewModel(repository) as T
+        }
+        if (modelClass.isAssignableFrom(FoodDetailViewModel::class.java)) {
+            return FoodDetailViewModel(repository) as T
         }
         throw IllegalArgumentException("Unknown ViewModel Class: " + modelClass.name)
     }

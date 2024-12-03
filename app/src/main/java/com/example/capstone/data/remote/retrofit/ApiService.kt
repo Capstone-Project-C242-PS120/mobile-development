@@ -75,6 +75,11 @@ interface ApiService {
         @Query("tags") tags: String? = null
     ): SearchFoodResponse
 
+    @GET("api/food/detail")
+    suspend fun detailFood(
+        @Header("Authorization") token: String,
+        @Query("id") id: Int
+    ): FoodDetailResponse
 
 
 

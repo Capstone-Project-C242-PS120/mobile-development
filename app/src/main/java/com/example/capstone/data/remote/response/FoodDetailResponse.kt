@@ -5,65 +5,65 @@ import com.google.gson.annotations.SerializedName
 data class FoodDetailResponse(
 
 	@field:SerializedName("data")
-	val data: FoodDetailData? = null,
+	val data: DetailFood,
 
 	@field:SerializedName("message")
-	val message: String? = null,
+	val message: String,
 
 	@field:SerializedName("statusCode")
-	val statusCode: Int? = null,
+	val statusCode: Int,
 
 	@field:SerializedName("timestamp")
-	val timestamp: String? = null
+	val timestamp: String
 )
 
-data class FoodDetailData(
+data class DetailFood(
 
 	@field:SerializedName("fiber")
-	val fiber: Any? = null,
+	val fiber: Double,
 
 	@field:SerializedName("image_url")
-	val imageUrl: String? = null,
+	val imageUrl: String,
 
 	@field:SerializedName("calories")
-	val calories: Int? = null,
+	val calories: Double,
 
 	@field:SerializedName("vegetable")
-	val vegetable: Int? = null,
+	val vegetable: Double,
 
 	@field:SerializedName("type")
-	val type: String? = null,
+	val type: String,
 
 	@field:SerializedName("food_rate")
-	val foodRate: Int? = null,
+	val foodRate: Int,
 
 	@field:SerializedName("tags")
-	val tags: List<String?>? = null,
+	val tags: List<String>,
 
 	@field:SerializedName("image_nutrition_url")
-	val imageNutritionUrl: String? = null,
+	val imageNutritionUrl: String,
 
 	@field:SerializedName("grade")
-	val grade: String? = null,
+	val grade: Char,
 
 	@field:SerializedName("protein")
-	val protein: Any? = null,
+	val protein: Double,
 
 	@field:SerializedName("name")
-	val name: String? = null,
+	val name: String,
 
 	@field:SerializedName("fat")
-	val fat: Int? = null,
+	val fat: Double,
 
 	@field:SerializedName("nutriscore")
-	val nutriscore: Int? = null,
+	val nutriscore: Double,
 
 	@field:SerializedName("id")
-	val id: Int? = null,
+	val id: Int,
 
 	@field:SerializedName("natrium")
-	val natrium: Any? = null,
+	val natrium: Double,
 
 	@field:SerializedName("sugar")
-	val sugar: Int? = null
+	val sugar: Double
 )

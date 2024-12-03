@@ -176,33 +176,39 @@ class ScanFoodDetailActivity : AppCompatActivity() {
 
         analyzeData?.let {
             binding.apply {
-                txtCalories.text = it.calories.toString()
-                txtProtein.text = it.protein.toString()
-                txtSugar.text = it.sugar.toString()
-                txtFat.text = it.fat.toString()
-                txtFiber.text = it.fiber.toString()
-                txtNatrium.text = it.natrium.toString()
+                txtCalories.text = "${it.calories} kcal"
+                txtProtein.text = "${it.protein} g"
+                txtSugar.text = "${it.sugar} g"
+                txtFat.text = "${it.fat} g"
+                txtFiber.text = "${it.fiber} g"
+                txtNatrium.text = "${it.natrium} mg"
+
 
                 when(it.grade) {
                     'A' -> {
                         rankA.background = ContextCompat.getDrawable(this@ScanFoodDetailActivity, R.drawable.food_rank_a)
                         rankA.setTextColor(ContextCompat.getColor(this@ScanFoodDetailActivity, android.R.color.white))
+                        binding.txtKeterangan.text = getString(R.string.keterangan_A)
                     }
                     'B' -> {
                         rankB.background = ContextCompat.getDrawable(this@ScanFoodDetailActivity, R.drawable.food_rank_b)
                         rankB.setTextColor(ContextCompat.getColor(this@ScanFoodDetailActivity, android.R.color.white))
+                        binding.txtKeterangan.text = getString(R.string.keterangan_B)
                     }
                     'C' -> {
                         rankC.background = ContextCompat.getDrawable(this@ScanFoodDetailActivity, R.drawable.food_rank_c)
                         rankC.setTextColor(ContextCompat.getColor(this@ScanFoodDetailActivity, android.R.color.white))
+                        binding.txtKeterangan.text = getString(R.string.keterangan_C)
                     }
                     'D' -> {
                         rankD.background = ContextCompat.getDrawable(this@ScanFoodDetailActivity, R.drawable.food_rank_d)
                         rankD.setTextColor(ContextCompat.getColor(this@ScanFoodDetailActivity, android.R.color.white))
+                        binding.txtKeterangan.text = getString(R.string.keterangan_D)
                     }
                     'E' -> {
                         rankE.background = ContextCompat.getDrawable(this@ScanFoodDetailActivity, R.drawable.food_rank_e)
                         rankE.setTextColor(ContextCompat.getColor(this@ScanFoodDetailActivity, android.R.color.black))
+                        binding.txtKeterangan.text = getString(R.string.keterangan_E)
                     }
                 }
             }

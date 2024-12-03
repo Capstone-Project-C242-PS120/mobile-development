@@ -58,6 +58,31 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/img_preview" />
 
+        <TextView
+            android:id="@+id/txt_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/kategori"
+            android:layout_marginBottom="2dp"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_food_name"
+            app:layout_constraintBottom_toTopOf="@id/txt_tags"/>
+
+        <TextView
+            android:id="@+id/txt_tags"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:background="@drawable/rounded_search_card_category"
+            android:textColor="@color/white"
+            android:paddingVertical="4dp"
+            android:paddingHorizontal="8dp"
+            android:text="sayur, buah, makanan sehat"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_category"
+            app:layout_constraintBottom_toTopOf="@id/txt_food_rank"/>
+
 
         <TextView
             android:id="@+id/txt_food_rank"
@@ -67,7 +92,7 @@
             android:fontFamily="@font/poppins_regular"
             android:text="@string/peringkat_makanan"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_food_name" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_tags" />
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -298,7 +323,7 @@
                     android:text="@string/serat" />
 
                 <TextView
-                    android:id="@+id/txt_carbo"
+                    android:id="@+id/txt_fiber"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/_100kcal" />
@@ -323,7 +348,7 @@
                     android:text="@string/natrium" />
 
                 <TextView
-                    android:id="@+id/txt_vitaminc"
+                    android:id="@+id/txt_natrium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/_100kcal" />
@@ -450,6 +475,17 @@
             android:text="@string/simpan"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ratingDetails" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
