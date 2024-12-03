@@ -42,43 +42,308 @@
             android:fontFamily="@font/poppins_medium"
             android:textColor="@color/black"/>
 
-
-        <ImageView
-            android:layout_marginTop="16dp"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="296dp"
-            android:src="@drawable/benefit" />
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/rounded_history_card"
+            >
+            <LinearLayout
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try Our Pro Feature on subscription"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_medium"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:text="Chose your favorite plan and bcome our membership, and enjoy our loyality "
+                    android:textColor="#979797"
+                    android:fontFamily="@font/poppins_medium"/>
 
-        <HorizontalScrollView
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:text="Benefit :"
+                    android:textColor="#979797"
+                    android:fontFamily="@font/poppins_medium"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:text="- Scan Harian"
+                    android:textColor="#979797"
+                    android:fontFamily="@font/poppins_medium"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:text="- Informasi Nutrisi Dasar"
+                    android:textColor="#979797"
+                    android:fontFamily="@font/poppins_medium"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:text="- Analitik Gizi Mingguan"
+                    android:textColor="#979797"
+                    android:fontFamily="@font/poppins_medium"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:text="- Fitur Kebutuhan Khusus"
+                    android:textColor="#979797"
+                    android:fontFamily="@font/poppins_medium"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:text="- Rekomendasi Berdasarkan Riwayat"
+                    android:textColor="#979797"
+                    android:fontFamily="@font/poppins_medium"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="203dp"
+                android:layout_height="225dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/travels"/>
+        </LinearLayout>
+
+
+<!--        <ImageView-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="296dp"-->
+<!--            android:src="@drawable/benefit" />-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Penawaran Kami: "
+            android:textSize="10sp"
+            android:textColor="#979797"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_marginTop="16dp"/>
+
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="16dp">
+                android:orientation="vertical"
+                android:layout_marginTop="16dp"
+                >
 
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="202dp"
-                    android:src="@drawable/subs1"
-                    android:layout_marginEnd="16dp" />
 
-                <ImageView
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="202dp"
-                    android:src="@drawable/subs2"
-                    android:layout_marginEnd="16dp" />
+                    android:layout_height="189dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/rounded_history_card"
+                    android:layout_marginHorizontal="16dp"
+                    android:backgroundTint="#57AB7F"
+                    >
+                    <LinearLayout
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:text="1 Day Pro Feature"
+                            android:fontFamily="@font/poppins_medium"
+                            android:textSize="15sp"
+                            android:layout_marginVertical="4dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:text="For you who want to try our feature, remembebr its only one day 😄 , Renewable in 24 hour after payment"
+                            android:textSize="10sp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:layout_marginVertical="4dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_search_card_category"
+                            android:text="RP. 9.900"
+                            android:paddingVertical="4dp"
+                            android:paddingHorizontal="16dp"
+                            android:textColor="@color/white"
+                            android:layout_marginVertical="4dp"/>
+                    </LinearLayout>
 
-                <ImageView
+                    <ImageView
+                    android:layout_width="203dp"
+                    android:layout_height="225dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/travels"/>
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="202dp"
-                    android:src="@drawable/subs3"
-                    />
+                    android:layout_height="189dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/rounded_history_card"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginVertical="16dp"
+                    android:backgroundTint="#FFB61D">
+                    <LinearLayout
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:text="1 Week Pro Feature"
+                            android:fontFamily="@font/poppins_medium"
+                            android:textSize="15sp"
+                            android:layout_marginVertical="4dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:text="For you who want to try our feature, remembebr its only one day 😄 , Renewable in 24 hour after payment"
+                            android:textSize="10sp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:layout_marginVertical="4dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_search_card_category"
+                            android:text="RP. 9.900"
+                            android:paddingVertical="4dp"
+                            android:paddingHorizontal="16dp"
+                            android:textColor="@color/white"
+                            android:layout_marginVertical="4dp"/>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="203dp"
+                        android:layout_height="225dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/travels"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="189dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/rounded_history_card"
+                    android:layout_marginHorizontal="16dp"
+                    android:backgroundTint="#A7352A"
+                    android:layout_marginBottom="16dp">
+                    <LinearLayout
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:text="1 Month Pro Feature"
+                            android:fontFamily="@font/poppins_medium"
+                            android:textSize="15sp"
+                            android:layout_marginVertical="4dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:text="For you who want to try our feature, remembebr its only one day 😄 , Renewable in 24 hour after payment"
+                            android:textSize="10sp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:layout_marginVertical="4dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_search_card_category"
+                            android:text="RP. 9.900"
+                            android:paddingVertical="4dp"
+                            android:paddingHorizontal="16dp"
+                            android:textColor="@color/white"
+                            android:layout_marginVertical="4dp"/>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="203dp"
+                        android:layout_height="225dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/travels"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="189dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/rounded_history_card"
+                    android:layout_marginHorizontal="16dp"
+                    android:backgroundTint="#E63312"
+                    android:layout_marginBottom="16dp">
+                    <LinearLayout
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:text="1 Year Pro Feature"
+                            android:fontFamily="@font/poppins_medium"
+                            android:textSize="15sp"
+                            android:layout_marginVertical="4dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:text="For you who want to try our feature, remembebr its only one day 😄 , Renewable in 24 hour after payment"
+                            android:textSize="10sp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:layout_marginVertical="4dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_search_card_category"
+                            android:text="RP. 9.900"
+                            android:paddingVertical="4dp"
+                            android:paddingHorizontal="16dp"
+                            android:textColor="@color/white"
+                            android:layout_marginVertical="4dp"/>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="203dp"
+                        android:layout_height="225dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/travels"/>
+                </LinearLayout>
 
             </LinearLayout>
-        </HorizontalScrollView>
+        </ScrollView>
 
     </LinearLayout>
 
