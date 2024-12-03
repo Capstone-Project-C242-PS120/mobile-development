@@ -150,6 +150,8 @@
     <string name="kategori">Kategori:</string>
     <string name="limit_nharianmu">Limit \nharianmu:</string>
     <string name="upgrade_ke_premium">Upgrade ke premium</string>
+    <string name="halo">Halo,</string>
+    <string name="berita">Berita</string>
 
 
 </resources>

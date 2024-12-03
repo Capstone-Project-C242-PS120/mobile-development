@@ -7,6 +7,7 @@ import com.example.capstone.data.remote.response.FoodDetailResponse
 import com.example.capstone.data.remote.response.GetProfileResponse
 import com.example.capstone.data.remote.response.HistoryFoodResponse
 import com.example.capstone.data.remote.response.LoginResponse
+import com.example.capstone.data.remote.response.NutritionSummaryResponse
 import com.example.capstone.data.remote.response.RegisterResponse
 import com.example.capstone.data.remote.response.SearchFoodResponse
 import okhttp3.MultipartBody
@@ -100,4 +101,9 @@ interface ApiService {
     suspend fun getQuota(
         @Header("Authorization") token: String
     ): DailyScanQuotaResponse
+
+    @GET("api/user/summary")
+    suspend fun getSummary(
+        @Header("Authorization") token: String
+    ): NutritionSummaryResponse
 }
