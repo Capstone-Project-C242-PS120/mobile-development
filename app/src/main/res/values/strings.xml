@@ -21,12 +21,86 @@
 
 
     <string-array name="categories">
-        <item>Pilih Kategori</item>
-        <item>Buah</item>
-        <item>Sayur</item>
+        <item>Camilan manis</item>
+        <item>Biskuit dan kue</item>
+        <item>Lemak dan saus</item>
+        <item>Saus penambah rasa makanan</item>
+        <item>Sereal dan kentang</item>
+        <item>Makanan komposit</item>
+        <item>Makanan satu porsi</item>
+        <item>Permen</item>
+        <item>Susu dan produk susu</item>
+        <item>Susu dan yogurt</item>
+        <item>Sereal sarapan</item>
         <item>Minuman</item>
+        <item>Minuman tanpa pemanis</item>
+        <item>Keju</item>
+        <item>Camilan asin</item>
+        <item>Makanan pembuka</item>
+        <item>Buah dan sayur</item>
+        <item>Ikan, Daging, Telur</item>
+        <item>Daging olahan</item>
+        <item>Minuman manis</item>
+        <item>Lemak</item>
         <item>Roti</item>
+        <item>Pengganti susu berbasis tanaman</item>
+        <item>Kacang-kacangan</item>
+        <item>Buah-buahan</item>
+        <item>Daging, Daging selain unggas</item>
+        <item>Minuman pemanis buatan</item>
+        <item>Pizza dan quiche</item>
+        <item>Produk cokelat</item>
+        <item>Unggas</item>
+        <item>Es krim</item>
+        <item>Ikan dan makanan laut</item>
+        <item>Ikan berlemak</item>
+        <item>Telur</item>
+        <item>Buah kering</item>
+        <item>Sandwich</item>
+        <item>Produk asin dan berlemak</item>
+        <item>Sup</item>
+        <item>Pencuci mulut susu</item>
+        <item>Kue kering</item>
+        <item>Kentang</item>
+        <item>Teh dan teh herbal serta kopi</item>
+        <item>Nektar buah</item>
+        <item>Sayur</item>
+        <item>Sereal</item>
+        <item>Daging</item>
+        <item>Daging selain unggas</item>
+        <item>Ikan</item>
+        <item>Ikan berlemak sedikit</item>
+        <item>Jeroan</item>
+        <item>Sari buah</item>
+        <item>Serealia</item>
+        <item>Serealia olahan</item>
+        <item>Umbi berpati</item>
+        <item>Umbi berpati olahan</item>
+        <item>Kacang</item>
+        <item>biji</item>
+        <item>bean</item>
+        <item>olahan</item>
+        <item>Sayuran</item>
+        <item>Sayuran olahan</item>
+        <item>Buah</item>
+        <item>Buah olahan</item>
+        <item>unggas olahan</item>
+        <item>kerang</item>
+        <item>udang</item>
+        <item>udang olahan</item>
+        <item>Telur olahan</item>
+        <item>Susu</item>
+        <item>Susu olahan</item>
+        <item>Lemak dan minyak</item>
+        <item>Lemak dan minyak olahan</item>
+        <item>Gula</item>
+        <item>sirup</item>
+        <item>konfeksioneri</item>
+        <item>Bumbu</item>
+        <item>Bumbu olahan</item>
+        <item>Minuman olahan</item>
     </string-array>
+
 
     <string name="spinner_prompt">Pilih Kategori Makanan</string>
     <string name="format_email_tidak_valid">Format email tidak valid</string>

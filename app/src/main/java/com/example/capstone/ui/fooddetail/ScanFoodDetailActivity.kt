@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.View
 import android.widget.CheckBox
 import android.widget.LinearLayout
+import android.widget.ScrollView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -203,18 +204,24 @@ class ScanFoodDetailActivity : AppCompatActivity() {
         val categories = resources.getStringArray(R.array.categories)
         val selectedItems = BooleanArray(categories.size)
 
-        val layout = LinearLayout(this)
-        layout.orientation = LinearLayout.VERTICAL
+        val scrollView = ScrollView(this)
+        val layout = LinearLayout(this).apply {
+            orientation = LinearLayout.VERTICAL
+        }
+
         for (i in categories.indices) {
-            val checkBox = CheckBox(this)
-            checkBox.text = categories[i]
-            checkBox.isChecked = selectedItems[i]
+            val checkBox = CheckBox(this).apply {
+                text = categories[i]
+                isChecked = selectedItems[i]
+            }
             layout.addView(checkBox)
         }
 
+        scrollView.addView(layout)
+
         AlertDialog.Builder(this)
-            .setTitle("Select Categories")
-            .setView(layout)
+            .setTitle("Pilih Kategori Makanan")
+            .setView(scrollView)
             .setPositiveButton("OK") { _, _ ->
                 selectedCategories.clear()
                 for (i in categories.indices) {
@@ -224,13 +231,13 @@ class ScanFoodDetailActivity : AppCompatActivity() {
                     }
                 }
 
-
                 val selectedText = selectedCategories.joinToString(", ")
                 findViewById<TextView>(R.id.selectedCategories).text = selectedText
             }
             .setNegativeButton("Cancel", null)
             .show()
     }
+
 
     private fun setupView(imageUriString: String?, analyzeData: DataAnalyze?) {
         if (imageUriString != null) {
