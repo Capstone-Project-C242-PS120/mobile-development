@@ -433,12 +433,12 @@
                     android:id="@+id/img_rate_1"
                     android:layout_width="38dp"
                     android:layout_height="38dp"
-                    android:src="@drawable/ic_bw_rate_3" />
+                    android:src="@drawable/lastime_uncheck" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="lastime" />
+                    android:text="@string/skip" />
             </LinearLayout>
 
             <LinearLayout
@@ -453,12 +453,12 @@
                     android:id="@+id/img_rate_2"
                     android:layout_width="38dp"
                     android:layout_height="38dp"
-                    android:src="@drawable/ic_bw_rate_3" />
+                    android:src="@drawable/regrets_uncheck" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="regrets" />
+                    android:text="@string/kurang" />
             </LinearLayout>
 
             <LinearLayout
@@ -473,12 +473,12 @@
                     android:id="@+id/img_rate_3"
                     android:layout_width="38dp"
                     android:layout_height="38dp"
-                    android:src="@drawable/ic_bw_rate_3" />
+                    android:src="@drawable/okay_uncheck" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Okay" />
+                    android:text="@string/biasa" />
             </LinearLayout>
 
             <LinearLayout
@@ -493,12 +493,12 @@
                     android:id="@+id/img_rate_4"
                     android:layout_width="38dp"
                     android:layout_height="38dp"
-                    android:src="@drawable/ic_bw_rate_3" />
+                    android:src="@drawable/like_uncheck" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Like" />
+                    android:text="@string/suka" />
             </LinearLayout>
 
             <LinearLayout
@@ -513,12 +513,12 @@
                     android:id="@+id/img_rate_5"
                     android:layout_width="38dp"
                     android:layout_height="38dp"
-                    android:src="@drawable/ic_bw_rate_3" />
+                    android:src="@drawable/favorite_uncheck" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Love" />
+                    android:text="@string/cinta" />
             </LinearLayout>
 
         </LinearLayout>

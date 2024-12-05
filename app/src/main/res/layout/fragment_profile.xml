@@ -42,14 +42,6 @@
             android:textColor="@color/grey"
             android:textSize="14sp" />
 
-        <Button
-            android:id="@+id/btn_edt_profile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:backgroundTint="@color/green"
-            android:text="@string/perbarui_profile" />
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

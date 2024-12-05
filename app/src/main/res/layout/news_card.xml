@@ -52,7 +52,7 @@
                 android:maxWidth="200dp"
                 android:text="Rekomendas Menu Diet Harian dari Ahli"
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/news_litledesc"
@@ -66,7 +66,7 @@
                 android:singleLine="true"
                 android:text="Our Benefit to enhance  pro members"
                 android:textColor="@color/white"
-                android:textSize="10sp" />
+                android:textSize="11sp" />
 
             <TextView
                 android:id="@+id/news_button"

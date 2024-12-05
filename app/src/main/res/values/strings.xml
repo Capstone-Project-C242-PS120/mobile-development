@@ -173,6 +173,11 @@
     <string name="upgrade_ke_premium">Upgrade ke premium</string>
     <string name="halo">Halo,</string>
     <string name="berita">Berita</string>
+    <string name="skip">Skip</string>
+    <string name="kurang">Kurang</string>
+    <string name="biasa">Biasa</string>
+    <string name="suka">Suka</string>
+    <string name="cinta">Cinta</string>
 
 
 </resources>

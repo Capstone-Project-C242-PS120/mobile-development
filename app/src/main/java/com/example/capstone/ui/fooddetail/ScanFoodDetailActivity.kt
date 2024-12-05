@@ -76,21 +76,20 @@ class ScanFoodDetailActivity : AppCompatActivity() {
             binding.imgRate5
         )
 
-
         val coloredImages = listOf(
-            R.drawable.ic_rate_4,
-            R.drawable.ic_rate_4,
-            R.drawable.ic_rate_4,
-            R.drawable.ic_rate_4,
-            R.drawable.ic_rate_4,
+            R.drawable.lastime_checked,
+            R.drawable.regrets_checked,
+            R.drawable.okay_checked,
+            R.drawable.like_checked,
+            R.drawable.favorite_checked,
         )
 
         val grayImages = listOf(
-            R.drawable.ic_bw_rate_3,
-            R.drawable.ic_bw_rate_3,
-            R.drawable.ic_bw_rate_3,
-            R.drawable.ic_bw_rate_3,
-            R.drawable.ic_bw_rate_3,
+            R.drawable.lastime_uncheck,
+            R.drawable.regrets_uncheck,
+            R.drawable.okay_uncheck,
+            R.drawable.like_uncheck,
+            R.drawable.favorite_uncheck,
         )
 
         rateImages.forEachIndexed { index, imageView ->
