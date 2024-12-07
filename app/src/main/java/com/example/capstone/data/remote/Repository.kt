@@ -10,6 +10,7 @@ import com.example.capstone.data.remote.response.HistoryFoodResponse
 import com.example.capstone.data.remote.response.LoginResponse
 import com.example.capstone.data.remote.response.NewsResponse
 import com.example.capstone.data.remote.response.NutritionSummaryResponse
+import com.example.capstone.data.remote.response.RecomendationResponse
 import com.example.capstone.data.remote.response.RegisterResponse
 import com.example.capstone.data.remote.response.SearchFoodResponse
 import com.example.capstone.data.remote.retrofit.ApiService
@@ -294,6 +295,28 @@ class Repository private constructor(
             try {
                 val authToken = "Bearer $token"
                 val response = apiService.getNews(authToken)
+                if (response.statusCode == 200) {
+                    Result.Success(response)
+                } else {
+                    Result.Error(response.message)
+                }
+            } catch (e: HttpException) {
+                val errorMessage = when (e.code()) {
+                    401 -> "Unauthorized access"
+                    else -> "Error: ${e.message()}"
+                }
+                Result.Error(errorMessage)
+            } catch (e: Exception) {
+                Result.Error("Error: ${e.message ?: "Unknown error"}")
+            }
+        }
+    }
+
+    suspend fun getRecomendation(token: String): Result<RecomendationResponse> {
+        return withContext(Dispatchers.IO) {
+            try {
+                val authToken = "Bearer $token"
+                val response = apiService.getRecomendation(authToken)
                 if (response.statusCode == 200) {
                     Result.Success(response)
                 } else {

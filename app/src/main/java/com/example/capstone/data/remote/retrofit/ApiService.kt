@@ -9,6 +9,7 @@ import com.example.capstone.data.remote.response.HistoryFoodResponse
 import com.example.capstone.data.remote.response.LoginResponse
 import com.example.capstone.data.remote.response.NewsResponse
 import com.example.capstone.data.remote.response.NutritionSummaryResponse
+import com.example.capstone.data.remote.response.RecomendationResponse
 import com.example.capstone.data.remote.response.RegisterResponse
 import com.example.capstone.data.remote.response.SearchFoodResponse
 import okhttp3.MultipartBody
@@ -112,4 +113,9 @@ interface ApiService {
     suspend fun getNews(
         @Header("Authorization") token: String
     ): NewsResponse
+
+    @GET("api/food/recommendation")
+    suspend fun getRecomendation(
+        @Header("Authorization") token: String
+    ): RecomendationResponse
 }

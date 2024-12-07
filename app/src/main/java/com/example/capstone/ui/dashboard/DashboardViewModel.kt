@@ -7,6 +7,7 @@ import com.example.capstone.data.Result
 import com.example.capstone.data.remote.Repository
 import com.example.capstone.data.remote.response.NewsResponse
 import com.example.capstone.data.remote.response.NutritionSummaryResponse
+import com.example.capstone.data.remote.response.RecomendationResponse
 import kotlinx.coroutines.launch
 
 class DashboardViewModel(private val repository: Repository): ViewModel() {
@@ -19,6 +20,8 @@ class DashboardViewModel(private val repository: Repository): ViewModel() {
     private val _newsResult = MutableLiveData<Result<NewsResponse>>()
     var newsResult: MutableLiveData<Result<NewsResponse>> = _newsResult
 
+    private val _recomendationResult = MutableLiveData<Result<RecomendationResponse>>()
+    var recomendationResult: MutableLiveData<Result<RecomendationResponse>> = _recomendationResult
     fun getSummary(token: String) {
         _isLoading.value = true
         viewModelScope.launch {
@@ -33,6 +36,15 @@ class DashboardViewModel(private val repository: Repository): ViewModel() {
         viewModelScope.launch {
             val result = repository.getNews(token)
             _newsResult.value = result
+            _isLoading.value = false
+        }
+    }
+
+    fun getRecomendation(token: String) {
+        isLoading.value = true
+        viewModelScope.launch {
+            val result = repository.getRecomendation(token)
+            _recomendationResult.value = result
             _isLoading.value = false
         }
     }

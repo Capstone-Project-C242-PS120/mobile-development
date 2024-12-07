@@ -8,12 +8,14 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.capstone.R
 import com.example.capstone.data.Result
 import com.example.capstone.databinding.FragmentDashboardBinding
 import com.example.capstone.pref.SessionManager
 import com.example.capstone.ui.factory.ViewModelFactory
+import com.example.capstone.ui.fooddetail.FoodDetailActivity
 import com.example.capstone.ui.news.NewsActivity
 
 class FragmentDashboard : Fragment() {
@@ -23,6 +25,7 @@ class FragmentDashboard : Fragment() {
     private val viewModel: DashboardViewModel by viewModels {
         ViewModelFactory.getInstance(requireContext())
     }
+    private lateinit var recomendationAdapter: RecomendationAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,6 +42,16 @@ class FragmentDashboard : Fragment() {
         viewModel.getSummary(token)
         viewModel.getNews(token)
 
+        recomendationAdapter = RecomendationAdapter { selectedItem ->
+            val intent = Intent(requireContext(), FoodDetailActivity::class.java).apply {
+                putExtra("ITEM_ID", selectedItem.id)
+            }
+            requireContext().startActivity(intent)
+        }
+        binding.rcRecomendation.apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            adapter = recomendationAdapter
+        }
         observeViewModel()
     }
 
@@ -76,6 +89,20 @@ class FragmentDashboard : Fragment() {
                     Glide.with(this)
                         .load(news.imageUrl)
                         .into(binding.includeNewsCard.imgNews)
+                }
+            }
+        }
+        viewModel.recomendationResult.observe(viewLifecycleOwner) { result ->
+            when(result) {
+                is Result.Loading -> showLoading(true)
+                is Result.Error -> Toast.makeText(requireContext(), result.error, Toast.LENGTH_SHORT).show()
+                is Result.Success -> {
+                    val recomendation = result.data.data
+                    if (recomendation.isEmpty()) {
+                        Toast.makeText(requireContext(), "Tidak ada ditemukan", Toast.LENGTH_SHORT).show()
+                    } else {
+                        recomendationAdapter.submitList(recomendation)
+                    }
                 }
             }
         }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.dashboard.FragmentDashboard">
 
     <LinearLayout
@@ -17,32 +17,32 @@
             android:id="@+id/dashboard_pp"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/profile_pitcure"
-            app:shapeAppearance="@style/roundedImageView"
             android:layout_gravity="center_vertical"
-            android:scaleType="centerCrop"/>
+            android:scaleType="centerCrop"
+            android:src="@drawable/profile_pitcure"
+            app:shapeAppearance="@style/roundedImageView" />
 
         <LinearLayout
-            android:paddingStart="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:orientation="vertical"
-            android:layout_marginTop="16dp">
+            android:paddingStart="16dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
                 android:text="@string/halo"
                 android:textSize="18sp"
-                android:textStyle="normal"
-                android:fontFamily="@font/poppins_regular"/>
+                android:textStyle="normal" />
 
             <TextView
                 android:id="@+id/txt_username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="22sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
         </LinearLayout>
 
     </LinearLayout>
@@ -51,12 +51,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/berita"
         android:layout_below="@id/profile_section"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
+        android:text="@string/berita"
         android:textSize="15sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <!-- Recommendation Frame Layout -->
     <FrameLayout
@@ -66,9 +66,10 @@
         android:layout_below="@id/profile_section"
         android:paddingTop="20dp"
         android:paddingBottom="8dp">
+
         <include
-            layout="@layout/news_card"
-            android:id="@+id/include_news_card"/>
+            android:id="@+id/include_news_card"
+            layout="@layout/news_card" />
     </FrameLayout>
 
 
@@ -77,149 +78,148 @@
         android:id="@+id/tv_dailynutrition"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/nutrisi_harian"
         android:layout_below="@id/fr_recomendation"
         android:paddingLeft="16dp"
-        android:paddingRight="16dp"
         android:paddingTop="8dp"
+        android:paddingRight="16dp"
+        android:text="@string/nutrisi_harian"
         android:textSize="15sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <LinearLayout
         android:id="@+id/item_nutrition"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_dailynutrition"
+        android:gravity="center_horizontal"
         android:orientation="horizontal"
         android:paddingLeft="16dp"
-        android:paddingRight="16dp"
         android:paddingTop="8dp"
-        android:gravity="center_horizontal">
+        android:paddingRight="16dp">
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center_horizontal"
-            android:paddingVertical="16dp"
-            android:paddingHorizontal="8dp"
+            android:layout_marginHorizontal="8dp"
             android:layout_weight="1"
             android:background="@drawable/rounded_cardcalories"
-            android:layout_marginHorizontal="8dp">
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="16dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/kalori"
-                android:textSize="14sp"
-                android:textColor="@color/red_calories" />
+                android:textColor="@color/red_calories"
+                android:textSize="14sp" />
 
             <ImageView
-                android:src="@drawable/solar__fire_bold"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:layout_marginVertical="8dp" />
+                android:layout_marginVertical="8dp"
+                android:src="@drawable/solar__fire_bold" />
 
             <TextView
                 android:id="@+id/txt_kalori"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:textColor="@color/red_calories" />
+                android:textColor="@color/red_calories"
+                android:textSize="14sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center_horizontal"
-            android:paddingVertical="16dp"
-            android:paddingHorizontal="8dp"
+            android:layout_marginHorizontal="8dp"
             android:layout_weight="1"
             android:background="@drawable/rounded_cardprotein"
-            android:layout_marginHorizontal="8dp">
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="16dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/protein"
-                android:textSize="14sp"
-                android:textColor="@color/orange_protein" />
+                android:textColor="@color/orange_protein"
+                android:textSize="14sp" />
 
             <ImageView
-                android:src="@drawable/mingcute__chicken_fill"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:layout_marginVertical="8dp" />
+                android:layout_marginVertical="8dp"
+                android:src="@drawable/mingcute__chicken_fill" />
 
             <TextView
                 android:id="@+id/txt_protein"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:textColor="@color/orange_protein" />
+                android:textColor="@color/orange_protein"
+                android:textSize="14sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center_horizontal"
-            android:paddingVertical="16dp"
-            android:paddingHorizontal="8dp"
+            android:layout_marginHorizontal="8dp"
             android:layout_weight="1"
             android:background="@drawable/rounded_cardsugar"
-            android:layout_marginHorizontal="8dp">
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="16dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/gula"
-                android:textSize="14sp"
-                android:textColor="@color/blue_sugar" />
+                android:textColor="@color/blue_sugar"
+                android:textSize="14sp" />
 
             <ImageView
-                android:src="@drawable/ep__sugar"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:layout_marginVertical="8dp" />
+                android:layout_marginVertical="8dp"
+                android:src="@drawable/ep__sugar" />
 
             <TextView
                 android:id="@+id/txt_gula"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:textColor="@color/blue_sugar" />
+                android:textColor="@color/blue_sugar"
+                android:textSize="14sp" />
         </LinearLayout>
 
     </LinearLayout>
-
 
 
     <TextView
         android:id="@+id/tv_recent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/rekomendasi"
         android:layout_below="@id/item_nutrition"
+        android:layout_marginTop="16dp"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
+        android:text="@string/rekomendasi"
         android:textSize="15sp"
-        android:textStyle="bold"
-        android:layout_marginTop="16dp"/>
+        android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:padding="16dp"
-        android:id="@+id/recyleviewdashboard"
+        android:id="@+id/rc_recomendation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_recent"/>
+        android:layout_below="@id/tv_recent"
+        android:padding="16dp" />
 
     <ProgressBar
         android:id="@+id/progress_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
 
 </RelativeLayout>
