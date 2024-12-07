@@ -19,7 +19,7 @@
             android:layout_height="60dp"
             android:layout_gravity="center_vertical"
             android:scaleType="centerCrop"
-            android:src="@drawable/profile_pitcure"
+            android:src="@drawable/app_icon_teja"
             app:shapeAppearance="@style/roundedImageView" />
 
         <LinearLayout

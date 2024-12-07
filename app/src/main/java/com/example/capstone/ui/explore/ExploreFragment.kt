@@ -91,9 +91,16 @@ class ExploreFragment : Fragment() {
         }
         viewModel.searchResult.observe(viewLifecycleOwner) { result ->
             when(result) {
-                is Result.Loading -> showLoading(true)
+                is Result.Loading -> {
+                    showLoading(true)
+                    binding.layoutSearch.visibility = View.GONE
+                    binding.layoutNotFound.visibility = View.GONE
+                    binding.rcSearch.visibility = View.GONE
+                }
                 is Result.Error -> {
-                    Toast.makeText(requireContext(), result.error, Toast.LENGTH_SHORT).show()
+                    binding.rcSearch.visibility = View.GONE
+                    binding.layoutNotFound.visibility = View.VISIBLE
+                    binding.layoutSearch.visibility = View.GONE
                 }
                 is Result.Success -> {
                     val foods = result.data.data
@@ -101,6 +108,9 @@ class ExploreFragment : Fragment() {
                         Toast.makeText(requireContext(), "Tidak ada data ditemukan.", Toast.LENGTH_SHORT).show()
                     } else {
                         searchAdapter.submitList(foods)
+                        binding.layoutSearch.visibility = View.GONE
+                        binding.layoutNotFound.visibility = View.GONE
+                        binding.rcSearch.visibility = View.VISIBLE
                     }
 
                 }

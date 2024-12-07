@@ -20,7 +20,7 @@
             android:background="@drawable/rounded_profile_pitcure"
             android:clipToOutline="true"
             android:scaleType="centerCrop"
-            android:src="@drawable/profile_pitcure" />
+            android:src="@drawable/app_icon_teja" />
 
         <TextView
             android:id="@+id/txt_name"
