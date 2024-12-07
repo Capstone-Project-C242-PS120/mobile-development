@@ -64,8 +64,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/profile_section"
-        android:paddingTop="16dp"
-        android:paddingBottom="8dp"/>
+        android:paddingTop="20dp"
+        android:paddingBottom="8dp">
+        <include
+            layout="@layout/news_card"
+            android:id="@+id/include_news_card"/>
+    </FrameLayout>
+
 
     <!-- Daily Nutrition Title -->
     <TextView

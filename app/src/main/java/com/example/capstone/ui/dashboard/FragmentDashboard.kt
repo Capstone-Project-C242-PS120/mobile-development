@@ -1,5 +1,6 @@
 package com.example.capstone.ui.dashboard
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,11 +8,13 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.bumptech.glide.Glide
 import com.example.capstone.R
 import com.example.capstone.data.Result
 import com.example.capstone.databinding.FragmentDashboardBinding
 import com.example.capstone.pref.SessionManager
 import com.example.capstone.ui.factory.ViewModelFactory
+import com.example.capstone.ui.news.NewsActivity
 
 class FragmentDashboard : Fragment() {
     private var _binding: FragmentDashboardBinding? = null
@@ -34,6 +37,7 @@ class FragmentDashboard : Fragment() {
         sessionManager = SessionManager(requireContext())
         val token = sessionManager.getAuthToken().toString()
         viewModel.getSummary(token)
+        viewModel.getNews(token)
 
         observeViewModel()
     }
@@ -52,6 +56,26 @@ class FragmentDashboard : Fragment() {
                     binding.txtKalori.text = "${summary.calories}kcal"
                     binding.txtProtein.text = "${summary.protein}g"
                     binding.txtGula.text = "${summary.sugar}g"
+                }
+            }
+        }
+        viewModel.newsResult.observe(viewLifecycleOwner) { result ->
+            when(result) {
+                is Result.Loading -> showLoading(true)
+                is Result.Error -> Toast.makeText(requireContext(), result.error, Toast.LENGTH_SHORT).show()
+                is Result.Success -> {
+                    val news = result.data.data
+
+                    binding.includeNewsCard.newsName.text = news.title
+                    binding.includeNewsCard.newsLitledesc.text = news.description
+                    binding.includeNewsCard.newsButtonUrl.setOnClickListener {
+                        val intent = Intent(requireContext(), NewsActivity::class.java)
+                        intent.putExtra("NEWS_URL", news.url)
+                        startActivity(intent)
+                    }
+                    Glide.with(this)
+                        .load(news.imageUrl)
+                        .into(binding.includeNewsCard.imgNews)
                 }
             }
         }
