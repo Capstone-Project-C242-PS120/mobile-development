@@ -14,7 +14,7 @@
    - Display NutriScore (A to E) as a quality indicator for the food’s nutritional value.  
 
 2. **Comprehensive Food Search**  
-   - Access a database of over 100,000 food items, including non-packaged foods from Indonesia and beyond.  
+   - Access a database of over 19000 food items, including non-packaged foods from Indonesia and beyond.  
    - Detailed nutritional information and NutriScore for every item.  
 
 3. **History Tracking**  
@@ -57,7 +57,6 @@ TEJA leverages modern technologies to deliver optimal performance and user exper
 ### Installation  
 The TEJA application is available for download on the following platforms:  
 - **[Google Play Store](#)** *(coming soon)*  
-- **[Apple App Store](#)** *(coming soon)*  
 
 ### Usage  
 1. Register an account after installation.  
