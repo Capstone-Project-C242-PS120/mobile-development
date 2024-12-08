@@ -1,3 +1,6 @@
+<div align="center">
+    <img src="images/SiTeja_logo.png" alt="SiTeja Logo" width="200">
+</div>
 <h1 align="center">TEJA - Teman Jajan</h1>
 
 ## 📖 Introduction  
@@ -70,10 +73,9 @@ The TEJA application is available for download on the following platforms:
 ---
 
 ## 📸 Application Screenshots & Demo
-_(Add screenshots or links as soon as they are available.)_  
-- **Nutritional Scan**  
-- **Personalized Recommendations**  
-- **Health Articles**  
+<div align="center">
+    <img src="images/Teja-Sc-APP.png" alt="SiTeja SC" width="1000">
+</div>
 
 ---
 
