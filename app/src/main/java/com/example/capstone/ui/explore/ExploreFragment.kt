@@ -68,7 +68,7 @@ class ExploreFragment : Fragment() {
                     true
                 }
             val recommendations = listOf<TextView>(
-                recommendation1, recommendation2, recommendation3
+                recommendation1, recommendation2, recommendation3, recommendation4, recommendation5
             )
 
             recommendations.forEach { textView ->

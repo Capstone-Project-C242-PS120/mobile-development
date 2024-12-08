@@ -37,7 +37,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Rekomendasi Makanan Sehat"
+                android:text="@string/rekomendasi_makanan_sehat"
                 android:fontFamily="@font/poppins_bold"
                 android:textSize="16sp"
                 android:layout_marginVertical="4dp"/>
@@ -46,7 +46,7 @@
                 android:id="@+id/recommendation1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Pizza"
+                android:text="@string/mixed_vegetables"
                 android:drawableEnd="@drawable/round_arrow_outward_24"
                 android:textSize="16sp"
                 android:fontFamily="@font/poppins_regular"
@@ -62,7 +62,7 @@
                 android:id="@+id/recommendation2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Sushi"
+                android:text="@string/skim_milk"
                 android:drawableEnd="@drawable/round_arrow_outward_24"
                 android:fontFamily="@font/poppins_regular"
                 android:textSize="16sp"
@@ -78,7 +78,39 @@
                 android:id="@+id/recommendation3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Burger"
+                android:text="@string/almond_breeze"
+                android:drawableEnd="@drawable/round_arrow_outward_24"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="16sp"
+                android:padding="8dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="4dp"
+                android:background="@color/black"/>
+
+            <TextView
+                android:id="@+id/recommendation4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pineapple_slices"
+                android:drawableEnd="@drawable/round_arrow_outward_24"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="16sp"
+                android:padding="8dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="4dp"
+                android:background="@color/black"/>
+
+            <TextView
+                android:id="@+id/recommendation5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mashed_potatoes"
                 android:drawableEnd="@drawable/round_arrow_outward_24"
                 android:fontFamily="@font/poppins_regular"
                 android:textSize="16sp"

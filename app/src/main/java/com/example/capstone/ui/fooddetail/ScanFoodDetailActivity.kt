@@ -251,7 +251,7 @@ class ScanFoodDetailActivity : AppCompatActivity() {
                 txtSugar.text = "${it.sugar} g"
                 txtFat.text = "${it.fat} g"
                 txtFiber.text = "${it.fiber} g"
-                txtNatrium.text = "${it.natrium} mg"
+                txtNatrium.text = "${it.natrium} g"
 
 
                 when(it.grade) {

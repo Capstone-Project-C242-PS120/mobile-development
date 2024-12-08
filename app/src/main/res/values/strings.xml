@@ -180,6 +180,12 @@
     <string name="cinta">Cinta</string>
     <string name="lihat_lebih_lengkap">Lihat Lebih Lengkap</string>
     <string name="data_makanan_tidak_ditemukan">Data makanan tidak ditemukan</string>
+    <string name="rekomendasi_makanan_sehat">Rekomendasi Makanan Sehat</string>
+    <string name="mixed_vegetables">Mixed Vegetables</string>
+    <string name="skim_milk">Skim Milk</string>
+    <string name="almond_breeze">Almond Breeze</string>
+    <string name="pineapple_slices">Pineapple slices</string>
+    <string name="mashed_potatoes">Mashed Potatoes</string>
 
 
 </resources>

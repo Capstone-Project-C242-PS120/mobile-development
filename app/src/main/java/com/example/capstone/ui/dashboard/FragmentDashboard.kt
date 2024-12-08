@@ -41,6 +41,7 @@ class FragmentDashboard : Fragment() {
         val token = sessionManager.getAuthToken().toString()
         viewModel.getSummary(token)
         viewModel.getNews(token)
+        viewModel.getRecomendation(token)
 
         recomendationAdapter = RecomendationAdapter { selectedItem ->
             val intent = Intent(requireContext(), FoodDetailActivity::class.java).apply {
