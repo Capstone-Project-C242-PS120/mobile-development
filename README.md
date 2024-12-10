@@ -55,7 +55,8 @@ TEJA leverages modern technologies to deliver optimal performance and user exper
 
 ## 🚀 Getting Started  
 ### Installation  
-The TEJA application is available for download on the following platforms:  
+The TEJA application is available for download on the following platforms:
+- **[Github APK Release](https://github.com/Capstone-Project-C242-PS120/mobile-development/releases/tag/v1.0.0)**  
 - **[Google Play Store](#)** *(coming soon)*  
 
 ### Usage  
